@@ -32,7 +32,7 @@
           </a>
             <div class="flex  flex-start space-x-10 lg:space-x-5 font-medium sm:hidden"><a
                 class="hover:text-white" target="_blank"
-                href="https://community.forsage.io/">Community</a><a class="hover:text-white"
+                href="#">Community</a><a class="hover:text-white"
                                                                      target="_blank"
                                                                      href="https://support.forsage.io/">Documentation</a>
             </div>
@@ -192,7 +192,7 @@
                                                       class="absolute -top-24 left-1/2 -translate-x-1/2 z-0 hidden sm:block"
                                                       alt="forsagePlanet">
             <div class="flex w-full lg:hidden"><a class="w-full flex justify-center items-center px-2.5 sm:px-0"
-                                                  target="_blank" href="https://community.forsage.io/">
+                                                  target="_blank" href="#">
               <div class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
                 <div class="flex flex-col items-start text-left flex-1 space-y-2.5"><span
                     class="text-white text-2xl">Community</span><span>A platform for the exchange of experience, where each user can publish their material</span>
@@ -300,7 +300,7 @@
                       </a></li>
                       <li class="slide selected previous"><a
                           class="w-full flex justify-center items-center px-2.5 sm:px-0"
-                          target="_blank" href="https://community.forsage.io/">
+                          target="_blank" href="#">
                         <div class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
                           <div class="flex flex-col items-start text-left flex-1 space-y-2.5">
                             <span class="text-white text-2xl">Community</span><span>A platform for the exchange of experience, where each user can publish their material</span>
@@ -375,7 +375,7 @@
                       </a></li>
                       <li class="slide selected previous"><a
                           class="w-full flex justify-center items-center px-2.5 sm:px-0"
-                          target="_blank" href="https://community.forsage.io/">
+                          target="_blank" href="#">
                         <div class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
                           <div class="flex flex-col items-start text-left flex-1 space-y-2.5">
                             <span class="text-white text-2xl">Community</span><span>A platform for the exchange of experience, where each user can publish their material</span>
