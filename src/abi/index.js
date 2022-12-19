@@ -1,15 +1,16 @@
-import market from "./data/market.json"
+import coin from "./data/coin.json"
 
 const CONTRACTS = {
-    market:{address:"0x040A4E23C1aC7584Bb15F7241F56792DC74B1D7B",abi:market},
+    coin:{address:"",abi:coin},
+    USDT:{address:"TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",abi:coin},
 };
 
-function getContractByName(name, web3) {
-    return new web3.eth.Contract(CONTRACTS[name].abi, CONTRACTS[name].address, {});
+async function getContractByName(name, web3) {
+    return await web3.contract(CONTRACTS[name].abi,CONTRACTS[name].address );
 }
 
-function getContractByToken(name, address, web3) {
-    return new web3.eth.Contract(CONTRACTS[name].abi, address, {});
+async function  getContractByToken(name, address, web3) {
+    return await web3.contract(CONTRACTS[name].abi, address);
 }
 
 function getContractAddress(name) {

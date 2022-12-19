@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+
     <div id="__next">
       <div class="flex flex-col w-full">
         <div class="sticky top-0 flex flex-col items-center w-full z-50 bg-darkGray ">
@@ -8,88 +9,96 @@
                 class="flex justify-center items-center py-3 space-x-5 max-w-desktop-full w-full px-5 text-[12px] leading-[14px] overflow-auto sm:max-w-auto sm:justify-start ">
               <div class="flex-1 flex justify-center items-center space-x-5 flex-shrink-0 sm:flex-none">
                 <div class="flex items-center space-x-1.5 flex-shrink-0"><span class="flex-shrink-0 text-white">All participants</span><span
-                    class="text-lightBlue text-[15px] leading-[18px] num-bold-style">2 443 563</span></div>
+                    class="text-lightBlue text-[15px] leading-[18px] num-bold-style">{{ contractUSDTBalance }}</span></div>
               </div>
-              <div class="w-1 h-1 bg-lightBlue rounded-full flex-shrink-0"></div>
-              <div class="flex-1 flex justify-center items-center space-x-5 flex-shrink-0 sm:flex-none">
-                <div class="flex items-center space-x-1.5 flex-shrink-0"><span class="flex-shrink-0 text-white">Joined in 24 hours</span><span
-                    class="text-lightBlue text-[15px] leading-[18px] num-bold-style">3 436</span></div>
-              </div>
-              <div class="w-1 h-1 bg-lightBlue rounded-full flex-shrink-0"></div>
-              <div class="flex-1 flex justify-center items-center space-x-5 flex-shrink-0 sm:flex-none">
-                <div class="flex items-center space-x-1.5 flex-shrink-0"><span class="flex-shrink-0 text-white">Profit users result</span><span
-                    class="text-lightBlue text-[15px] leading-[18px] num-bold-style">1 094 688 280</span>
-                </div>
-              </div>
+<!--              <div class="w-1 h-1 bg-lightBlue rounded-full flex-shrink-0"></div>-->
+<!--              <div class="flex-1 flex justify-center items-center space-x-5 flex-shrink-0 sm:flex-none">-->
+<!--                <div class="flex items-center space-x-1.5 flex-shrink-0"><span class="flex-shrink-0 text-white">Joined in 24 hours</span><span-->
+<!--                    class="text-lightBlue text-[15px] leading-[18px] num-bold-style">3 436</span></div>-->
+<!--              </div>-->
+
             </div>
           </div>
           <div class="flex justify-between items-center max-w-desktop-full w-full py-5 px-5">
-            <div class="flex items-center space-x-20 lg:space-x-5"><a href="https://forsage.io/">
-              <svg width="54" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M45.216 7.328a.572.572 0 0 1 .738.37l.517 1.561s-2.223-.74-3.382-.972l2.127-.96zm7.266 4.177c-.005 0-.234-.165-.356-.233l-3.734-1.986c-1.157-.575-.903-1.027-1.34-2.287a7.954 7.954 0 0 0-.66-1.41C44.261 4.533 38.203 4.78 37.624 0c0 0-2.26 1.548-2.672 4.383C11.073 2.479 0 16.23 0 16.23c4.448-1.849 9.246-2.726 14.045-2.958C4.921 20.599 2.05 31.638 2.05 31.638s7.39-7.492 18.5-11.669c-2.908 4.287-4.594 10.039-3.904 17.6 0 0 5.715-22.763 32.833-17.258 0 0 .992-3.026 3.554-6.122.162-.192.253-.48.272-.808a2.212 2.212 0 0 0-.824-1.876z"
-                      fill="#fff"></path>
-              </svg>
-            </a>
-              <div class="flex  flex-start space-x-10 lg:space-x-5 font-medium sm:hidden"><a
-                  class="hover:text-white" target="_blank"
-                  href="#">Community</a><a class="hover:text-white"
-                                           target="_blank"
-                                           href="https://support.forsage.io/">Documentation</a>
+            <div class="flex items-center space-x-20 lg:space-x-5">
+              <a :href="websideUrl">
+                <img src="../assets/logo.png" style="width: 54px;height: 38px;" alt="">
+              </a>
+
+              <div class="flex  flex-start space-x-10 lg:space-x-5 font-medium sm:hidden">
+                <!--                <a-->
+                <!--                    class="hover:text-white" target="_blank"-->
+                <!--                    href="#">Community</a>-->
+                <a class="hover:text-white"
+                   style="color:#999;"
+                   target="_blank"
+                   :href="documentUrl"> {{ $t("documentation") }}</a>
               </div>
             </div>
             <div class="relative group min-w-[175px] lg:min-w-max sm:hidden">
               <div class="flex justify-between items-center cursor-pointer p-4  group-hover:text-white">
-                <div class="flex items-center space-x-2"><img src="../assets/en.svg"
-                                                              class="w-5 h-5 lg:mr-2.5" alt=""><span
-                    class="lg:hidden">English</span></div>
+                <div class="flex items-center space-x-2">
+                  <img v-show="curLng==='en'" src="../assets/en.svg" class="w-5 h-5 lg:mr-2.5" alt="">
+                  <img v-show="curLng==='de'" src="../assets/de.svg" class="w-5 h-5" alt="">
+                  <span style="color: #999">{{ curLngName }}</span></div>
                 <svg class="fill-current w-2.5 transition all easy-out group-hover:rotate-180" viewBox="0 0 8 4"
                      fill="#8B8C8C" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 0H0l4 4 4-4Z"></path>
                 </svg>
               </div>
-              <ul class="w-full absolute bg-lightGray rounded-[15px] hidden group-hover:flex flex-col overflow-hidden drop-shadow-lg top-[50px]">
-                <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+              <ul
+                  class="w-full absolute bg-lightGray rounded-[15px] hidden group-hover:flex flex-col overflow-hidden drop-shadow-lg top-[50px]">
+                <li @click="chooseLng('en')"
+                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
                   <img src="../assets/en.svg" class="w-5 h-5" alt=""><span
                     class="lg:hidden">English</span></li>
-                <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                <li @click="chooseLng('de')"
+                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
                   <img src="../assets/de.svg" class="w-5 h-5" alt=""><span
                     class="lg:hidden">German</span></li>
-                <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="../assets/es.svg" class="w-5 h-5" alt=""><span
-                    class="lg:hidden">Spanish</span></li>
-                <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="../assets/ru.svg" class="w-5 h-5" alt=""><span
-                    class="lg:hidden">Русский</span></li>
-                <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span
-                    class="lg:hidden">French</span></li>
-                <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="../assets/es.svg" class="w-5 h-5" alt=""><span
-                    class="lg:hidden">Spanish</span></li>
-                <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="../assets/it.svg" class="w-5 h-5" alt=""><span
-                    class="lg:hidden">Italian</span></li>
-                <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="../assets/az.svg" class="w-5 h-5" alt=""><span class="lg:hidden">AZƏRBAYCAN</span>
-                </li>
-                <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="../assets/ar.svg" class="w-5 h-5" alt=""><span
-                    class="lg:hidden">العربية</span></li>
-                <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="../assets/he.svg" class="w-5 h-5" alt=""><span
-                    class="lg:hidden">עִבְרִית</span></li>
+<!--                <li-->
+<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                  <img src="../assets/es.svg" class="w-5 h-5" alt=""><span-->
+<!--                    class="lg:hidden">Spanish</span></li>-->
+<!--                <li-->
+<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                  <img src="../assets/ru.svg" class="w-5 h-5" alt=""><span-->
+<!--                    class="lg:hidden">Русский</span></li>-->
+<!--                <li-->
+<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                  <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span-->
+<!--                    class="lg:hidden">French</span></li>-->
+<!--                <li-->
+<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                  <img src="../assets/es.svg" class="w-5 h-5" alt=""><span-->
+<!--                    class="lg:hidden">Spanish</span></li>-->
+<!--                <li-->
+<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                  <img src="../assets/it.svg" class="w-5 h-5" alt=""><span-->
+<!--                    class="lg:hidden">Italian</span></li>-->
+<!--                <li-->
+<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                  <img src="../assets/az.svg" class="w-5 h-5" alt=""><span class="lg:hidden">AZƏRBAYCAN</span>-->
+<!--                </li>-->
+<!--                <li-->
+<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                  <img src="../assets/ar.svg" class="w-5 h-5" alt=""><span-->
+<!--                    class="lg:hidden">العربية</span></li>-->
+<!--                <li-->
+<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                  <img src="../assets/he.svg" class="w-5 h-5" alt=""><span-->
+<!--                    class="lg:hidden">עִבְרִית</span></li>-->
               </ul>
             </div>
             <div class="flex justify-end space-x-10 lg:space-x-0 sm:hidden">
-              <button
-                  class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !px-4 !py-2.5 rounded-[40px] bg-transparent hover:bg-purple font-bold">
-                Login
-              </button>
-              <button
-                  class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !px-4 !py-2.5 rounded-[40px] bg-transparent hover:bg-purple font-bold">
-                Registration
-              </button>
+              <!--              <button-->
+              <!--                  class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !px-4 !py-2.5 rounded-[40px] bg-transparent hover:bg-purple font-bold">-->
+              <!--                Login-->
+              <!--              </button>-->
+              <!--              <button-->
+              <!--                  class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !px-4 !py-2.5 rounded-[40px] bg-transparent hover:bg-purple font-bold">-->
+              <!--                Registration-->
+              <!--              </button>-->
             </div>
             <button
                 class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !w-10 !h-10 !p-0 !max-w-none rounded-full hidden relative sm:flex flex-col justify-center">
@@ -164,28 +173,30 @@
             <img src="../assets/gradient_logo.png"
                  class="mt-12 mb-12 z-10 max-w-[750px] sm:max-w-[75vw] sm:mb-10"><span
               class="text-center text-white text-2xl mb-10 z-10 sm:mb-10 sm:text-[18px] sm:leading-[24px]"><span
-              class="text-orange mr-2">№1</span>defi <!-- -->tool<!-- --> <br>to earn money</span>
+              class="text-orange mr-2">№1</span>{{ $t('page1info1') }} <br>{{ $t('page1info2') }}</span>
             <div class="flex flex-col items-center w-full sm:space-y-2.5">
-              <button
-                  class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple hover:bg-lightPurple active:bg-lightPurple z-10 hidden sm:flex sm:max-w-full sm:w-full">
-                Sign in
-              </button>
-              <button
-                  class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple hover:bg-lightPurple active:bg-lightPurple z-10 sm:max-w-full sm:w-full">
-                Registration
-                <svg class="h-5 w-5 ml-2.5 sm:h-4 sm:w-4" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
-                  </g>
-                  <defs>
-                    <clippath id="a">
-                      <path fill="#fff" transform="rotate(90 12 12)" d="M0 0h24v24H0z"></path>
-                    </clippath>
-                  </defs>
-                </svg>
-              </button>
+              <!--              <button-->
+              <!--                class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple hover:bg-lightPurple active:bg-lightPurple z-10 hidden sm:flex sm:max-w-full sm:w-full">-->
+              <!--                Sign in-->
+              <!--              </button>-->
+              <a :href="telegramChannel" target="_blank">
+                <button
+                    class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple hover:bg-lightPurple active:bg-lightPurple z-10 sm:max-w-full sm:w-full">
+                  Join Us
+                  <svg class="h-5 w-5 ml-2.5 sm:h-4 sm:w-4" viewBox="0 0 24 24" fill="none"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                       stroke-linejoin="round">
+                      <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
+                    </g>
+                    <defs>
+                      <clippath id="a">
+                        <path fill="#fff" transform="rotate(90 12 12)" d="M0 0h24v24H0z"></path>
+                      </clippath>
+                    </defs>
+                  </svg>
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -195,68 +206,69 @@
           <div class="w-full flex flex-col max-w-desktop-full space-y-28">
             <div
                 class="text-white text-[24px] leading-[40px] max-w-525px text-2xl z-10 sm:text-[20px] sm:leading-[30px]">
-              A decentralized networking platform based on smart contracts, together with NFT technology,
-              which<span class="text-gradient mx-1.5">brings people together</span> <!-- -->from all over the
-              world and<span class="text-gradient mx-1.5">opens up endless possibilities</span>new economic
-              financial<!-- --> <!-- -->systems
+              {{ $t('page2content1') }}<span class="text-gradient mx-1.5">{{ $t("page2content2") }}</span>
+              {{ $t("page2content3") }}<span class="text-gradient mx-1.5">{{ $t("page2content4") }}</span>
+              {{ $t("page2content5") }}
             </div>
-            <div class="relative flex w-full z-10"><img src="../assets/planet_mobile.png"
+            <div class="relative flex w-full z-10"><img src="../assets/planet_mobile.webp"
                                                         class="absolute -top-24 left-1/2 -translate-x-1/2 z-0 hidden sm:block"
                                                         alt="forsagePlanet">
-              <div class="flex w-full lg:hidden"><a class="w-full flex justify-center items-center px-2.5 sm:px-0"
-                                                    target="_blank" href="#">
+              <div class="flex w-full lg:hidden">
+                <!--                <a class="w-full flex justify-center items-center px-2.5 sm:px-0"-->
+                <!--                   target="_blank" href="#">-->
+                <!--                  <div class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">-->
+                <!--                    <div class="flex flex-col items-start text-left flex-1 space-y-2.5"><span-->
+                <!--                        class="text-white text-2xl">Community</span><span>A platform for the exchange of experience, where each user can publish their material</span>-->
+                <!--                    </div>-->
+                <!--                    <a class="flex items-center text-white"-->
+                <!--                       :href="websideUrl"><span>Become part of the community</span>-->
+                <!--                      <svg class="ml-1 w-5 h-5" viewBox="0 0 24 24" fill="none"-->
+                <!--                           xmlns="http://www.w3.org/2000/svg">-->
+                <!--                        <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5" stroke-linecap="round"-->
+                <!--                           stroke-linejoin="round">-->
+                <!--                          <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>-->
+                <!--                        </g>-->
+                <!--                        <defs>-->
+                <!--                          <clippath id="a">-->
+                <!--                            <path fill="#fff" transform="rotate(90 12 12)" d="M0 0h24v24H0z"></path>-->
+                <!--                          </clippath>-->
+                <!--                        </defs>-->
+                <!--                      </svg>-->
+                <!--                    </a><img src="../assets/people.png"-->
+                <!--                             class="absolute right-1.5 bottom-1.5 !w-40 !h-40"></div>-->
+                <!--                </a>-->
+                <a class="w-full flex justify-center items-center px-2.5 sm:px-0" target="_blank"
+                   :href="documentUrl">
+                  <div class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
+                    <div class="flex flex-col items-start text-left flex-1 space-y-2.5"><span
+                        class="text-white text-2xl">{{ $t("page1info1") }}</span><span>{{ $t("page2info1") }}</span>
+                    </div>
+                    <a class="flex items-center text-white"
+                       :href="websideUrl"><span>{{ $t("page2info1bottom") }}</span>
+                      <svg class="ml-1 w-5 h-5" viewBox="0 0 24 24" fill="none"
+                           xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                           stroke-linejoin="round">
+                          <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
+                        </g>
+                        <defs>
+                          <clippath id="a">
+                            <path fill="#fff" transform="rotate(90 12 12)" d="M0 0h24v24H0z"></path>
+                          </clippath>
+                        </defs>
+                      </svg>
+                    </a>
+                    <img src="../assets/book.webp"
+                         class="absolute right-1.5 bottom-1.5 !w-40 !h-40">
+                  </div>
+                </a><a class="w-full flex justify-center items-center px-2.5 sm:px-0" target="_blank"
+                       :href="telegramChat">
                 <div class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
                   <div class="flex flex-col items-start text-left flex-1 space-y-2.5"><span
-                      class="text-white text-2xl">Community</span><span>A platform for the exchange of experience, where each user can publish their material</span>
+                      class="text-white text-2xl">{{ $t("livechat") }}</span><span>{{ $t("page2info2") }}</span>
                   </div>
                   <a class="flex items-center text-white"
-                     href="https://forsage.io/"><span>Become part of the community</span>
-                    <svg class="ml-1 w-5 h-5" viewBox="0 0 24 24" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
-                         stroke-linejoin="round">
-                        <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
-                      </g>
-                      <defs>
-                        <clippath id="a">
-                          <path fill="#fff" transform="rotate(90 12 12)" d="M0 0h24v24H0z"></path>
-                        </clippath>
-                      </defs>
-                    </svg>
-                  </a><img src="../assets/people.png"
-                           class="absolute right-1.5 bottom-1.5 !w-40 !h-40"></div>
-              </a><a class="w-full flex justify-center items-center px-2.5 sm:px-0" target="_blank"
-                     href="https://support.forsage.io/">
-                <div class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
-                  <div class="flex flex-col items-start text-left flex-1 space-y-2.5"><span
-                      class="text-white text-2xl">Documentation</span><span>Participant learning platform</span>
-                  </div>
-                  <a class="flex items-center text-white"
-                     href="https://forsage.io/"><span>Start learning</span>
-                    <svg class="ml-1 w-5 h-5" viewBox="0 0 24 24" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
-                         stroke-linejoin="round">
-                        <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
-                      </g>
-                      <defs>
-                        <clippath id="a">
-                          <path fill="#fff" transform="rotate(90 12 12)" d="M0 0h24v24H0z"></path>
-                        </clippath>
-                      </defs>
-                    </svg>
-                  </a>
-                  <img src="../assets/book.webp"
-                       class="absolute right-1.5 bottom-1.5 !w-40 !h-40">
-                </div>
-              </a><a class="w-full flex justify-center items-center px-2.5 sm:px-0" target="_blank"
-                     href="https://t.me/smartpeoplechat/">
-                <div class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
-                  <div class="flex flex-col items-start text-left flex-1 space-y-2.5"><span
-                      class="text-white text-2xl">Live chat</span><span>Platform where you can ask a question to experienced participants</span>
-                  </div>
-                  <a class="flex items-center text-white"
-                     href="https://forsage.io/"><span>Find a mentor</span>
+                     :href="websideUrl"><span>{{ $t("page2info2bottom") }}</span>
                     <svg class="ml-1 w-5 h-5" viewBox="0 0 24 24" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                       <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
@@ -288,14 +300,14 @@
                           style="-webkit-transform:translate3d(-100%,0,0);-ms-transform:translate3d(-100%,0,0);-o-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0);-webkit-transition-duration:350ms;-moz-transition-duration:350ms;-o-transition-duration:350ms;transition-duration:350ms;-ms-transition-duration:350ms">
                         <li class="slide"><a
                             class="w-full flex justify-center items-center px-2.5 sm:px-0"
-                            target="_blank" href="https://t.me/smartpeoplechat/">
+                            target="_blank" :href="telegramChat">
                           <div
                               class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
                             <div class="flex flex-col items-start text-left flex-1 space-y-2.5">
                               <span class="text-white text-2xl">Live chat</span><span>Platform where you can ask a question to experienced participants</span>
                             </div>
                             <a class="flex items-center text-white"
-                               href="https://forsage.io/"><span>Find a mentor</span>
+                               :href="websideUrl"><span>Find a mentor</span>
                               <svg class="ml-1 w-5 h-5" viewBox="0 0 24 24" fill="none"
                                    xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5"
@@ -321,7 +333,7 @@
                               <span class="text-white text-2xl">Community</span><span>A platform for the exchange of experience, where each user can publish their material</span>
                             </div>
                             <a class="flex items-center text-white"
-                               href="https://forsage.io/"><span>Become part of the community</span>
+                               :href="websideUrl"><span>Become part of the community</span>
                               <svg class="ml-1 w-5 h-5" viewBox="0 0 24 24" fill="none"
                                    xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5"
@@ -340,7 +352,7 @@
                         </a></li>
                         <li class="slide"><a
                             class="w-full flex justify-center items-center px-2.5 sm:px-0"
-                            target="_blank" href="https://support.forsage.io/">
+                            target="_blank" :href="documentUrl">
                           <div
                               class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
                             <div class="flex flex-col items-start text-left flex-1 space-y-2.5">
@@ -348,7 +360,7 @@
                                   class="text-white text-2xl">Documentation</span><span>Participant learning platform</span>
                             </div>
                             <a class="flex items-center text-white"
-                               href="https://forsage.io/"><span>Start learning</span>
+                               :href="websideUrl"><span>Start learning</span>
                               <svg class="ml-1 w-5 h-5" viewBox="0 0 24 24" fill="none"
                                    xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5"
@@ -367,14 +379,14 @@
                         </a></li>
                         <li class="slide"><a
                             class="w-full flex justify-center items-center px-2.5 sm:px-0"
-                            target="_blank" href="https://t.me/smartpeoplechat/">
+                            target="_blank" :href="telegramChat">
                           <div
                               class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
                             <div class="flex flex-col items-start text-left flex-1 space-y-2.5">
                               <span class="text-white text-2xl">Live chat</span><span>Platform where you can ask a question to experienced participants</span>
                             </div>
                             <a class="flex items-center text-white"
-                               href="https://forsage.io/"><span>Find a mentor</span>
+                               :href="websideUrl"><span>Find a mentor</span>
                               <svg class="ml-1 w-5 h-5" viewBox="0 0 24 24" fill="none"
                                    xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5"
@@ -400,7 +412,7 @@
                               <span class="text-white text-2xl">Community</span><span>A platform for the exchange of experience, where each user can publish their material</span>
                             </div>
                             <a class="flex items-center text-white"
-                               href="https://forsage.io/"><span>Become part of the community</span>
+                               :href="websideUrl"><span>Become part of the community</span>
                               <svg class="ml-1 w-5 h-5" viewBox="0 0 24 24" fill="none"
                                    xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#a)" stroke="#fff" stroke-width="1.5"
@@ -430,29 +442,19 @@
         <div class="flex flex-col items-center background-gradient">
           <div class="py-[100px] flex flex-col max-w-desktop-full w-full px-5 lg:py-[40px]">
             <div class="flex flex-col items-center text-center  sm:text-left sm:items-start"><span
-                class="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">Partner results</span><span
-                class="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">All data is stored in the blockchain in the public domain and can be verified!</span>
+                class="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">{{
+                $t("page3title")
+              }}</span><span
+                class="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">{{
+                $t("page3content1")
+              }}</span>
             </div>
             <div class="flex flex-col w-full items-center mb-[60px] sm:items-start sm:mt-2.5 sm:mb-10">
-              <div class="flex space-x-2 sm:flex-col sm:space-x-0 sm:space-y-2"><span>Contract address
-                <!-- --> <span class="text-white font-semibold">eth<!-- -->:</span></span><span
-                  class="text-white cursor-pointer hover:text-white-800 sm:hidden">0x5acc84a3e955Bdd76467d3348077d003f00fFB97</span>
-                <div class="justify-start items-center hidden sm:flex"><span class=" text-white mr-2.5">0x5acc84a3e955...d003f00fFB97</span>
-                  <button
-                      class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !p-0 !max-w-none">
-                    <svg class="w-5 h-5" viewBox="0 0 20 20" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                          d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="flex space-x-2 sm:flex-col sm:space-x-0 sm:space-y-2"><span>Contract address
+
+              <div class="flex space-x-2 sm:flex-col sm:space-x-0 sm:space-y-2"><span>{{ $t("contractAddress") }}
                 <!-- --> <span class="text-white font-semibold">tron<!-- -->:</span></span><span
-                  class="text-white cursor-pointer hover:text-white-800 sm:hidden">TREbha3Jj6TrpT7e6Z5ukh3NRhyxHsmMug</span>
-                <div class="justify-start items-center hidden sm:flex"><span class=" text-white mr-2.5">TREbha3Jj6TrpT...mMug</span>
+                  class="text-white cursor-pointer hover:text-white-800 sm:hidden">{{ contractAddress }}</span>
+                <div class="justify-start items-center hidden sm:flex"><span class=" text-white mr-2.5">{{ contractAddress.substr(0,14) +"..." + contractAddress.substr(contractAddress.length-4,contractAddress.length) }}</span>
                   <button
                       class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !p-0 !max-w-none">
                     <svg class="w-5 h-5" viewBox="0 0 20 20" fill="#fff" xmlns="http://www.w3.org/2000/svg">
@@ -464,45 +466,35 @@
                   </button>
                 </div>
               </div>
-              <div class="flex space-x-2 sm:flex-col sm:space-x-0 sm:space-y-2"><span>Contract address
-                <!-- --> <span class="text-white font-semibold">busd<!-- -->:</span></span><span
-                  class="text-white cursor-pointer hover:text-white-800 sm:hidden">0x5acc84a3e955Bdd76467d3348077d003f00fFB97</span>
-                <div class="justify-start items-center hidden sm:flex"><span class=" text-white mr-2.5">0x5acc84a3e955...d003f00fFB97</span>
-                  <button
-                      class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !p-0 !max-w-none">
-                    <svg class="w-5 h-5" viewBox="0 0 20 20" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                          d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                      <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
+
             </div>
             <div class="relative flex flex-col justify-center items-center w-full">
               <div class="flex flex-col items-center w-full  ">
                 <div class="flex bg-white-200 rounded-[40px] p-1.5 w-max mb-16 sm:mb-10 sm:w-full">
-                  <div
-                      @click="navIndex1=0"
-                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 bg-white text-black">
-                    Total
-                  </div>
-                  <div
-                      @click="navIndex1=1"
-                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 ">
-                    eth
-                  </div>
+<!--                  <div-->
+<!--                      @click="navIndex1=0"-->
+<!--                      :class="{' bg-white text-black':navIndex1==0}"-->
+<!--                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5">-->
+<!--                    Total-->
+<!--                  </div>-->
+<!--                  <div-->
+<!--                      @click="navIndex1=1"-->
+<!--                      :class="{' bg-white text-black':navIndex1==1}"-->
+<!--                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 ">-->
+<!--                    eth-->
+<!--                  </div>-->
                   <div
                       @click="navIndex1=2"
+                      :class="{' bg-white text-black':navIndex1==2}"
                       class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 ">
                     tron
                   </div>
-                  <div
-                      @click="navIndex1=3"
-                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 ">
-                    busd
-                  </div>
+<!--                  <div-->
+<!--                      @click="navIndex1=3"-->
+<!--                      :class="{' bg-white text-black':navIndex1==3}"-->
+<!--                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 ">-->
+<!--                    busd-->
+<!--                  </div>-->
                 </div>
                 <div class="flex justify-start w-full sm:h-[300px]">
                   <div
@@ -514,14 +506,14 @@
                         <span class="text-white text-[42px] leading-[50px] num-bold-style">2 443 563</span><span
                           class="text-green text-[24px] leading-[50px] num-bold-style">+3 436</span>
                       </div>
-                      <span class="text-white-700 font-semibold">Accounts count</span></div>
+                      <span class="text-white-700 font-semibold">{{ $t("Accounts count") }}</span></div>
                     <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">
                       <div
                           class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
                         <span class="text-white text-[42px] leading-[50px] num-bold-style">1 094 688 280</span><span
                           class="text-green text-[24px] leading-[50px] num-bold-style">+598 690</span>
                       </div>
-                      <span class="text-white-700 font-semibold">Total result, USD</span></div>
+                      <span class="text-white-700 font-semibold">{{ $t("Total result") }}, USD</span></div>
                   </div>
                   <div
                       :class="{'hidden':navIndex1!=1}"
@@ -531,42 +523,43 @@
                           class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
                         <span class="text-white text-[42px] leading-[50px] num-bold-style">1 056 958</span>
                       </div>
-                      <span class="text-white-700 font-semibold">Accounts count</span></div>
+                      <span class="text-white-700 font-semibold">{{ $t("Accounts count") }}</span></div>
                     <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">
                       <div
                           class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
                         <span class="text-white text-[42px] leading-[50px] num-bold-style">712 352</span>
                       </div>
-                      <span class="text-white-700 font-semibold">Total result, ETH</span></div>
+                      <span class="text-white-700 font-semibold">{{ $t("Total result") }}, ETH</span></div>
                     <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">
                       <div
                           class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
                         <span class="text-white text-[42px] leading-[50px] num-bold-style">906 824 408</span>
                       </div>
-                      <span class="text-white-700 font-semibold">Total result, USD</span></div>
+                      <span class="text-white-700 font-semibold">{{ $t("Total result") }}, USD</span></div>
                   </div>
                   <div
                       :class="{'hidden':navIndex1!=2}"
                       class=" flex items-center justify-evenly flex-wrap w-full sm:flex-col sm:space-y-5 sm:items-start sm:w-full">
+<!--                    <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">-->
+<!--                      <div-->
+<!--                          class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">-->
+<!--                        <span class="text-white text-[42px] leading-[50px] num-bold-style">462 681</span><span-->
+<!--                          class="text-green text-[24px] leading-[50px] num-bold-style">+62</span>-->
+<!--                      </div>-->
+<!--                      <span class="text-white-700 font-semibold">{{ $t("Accounts count") }}</span>-->
+<!--                    </div>-->
                     <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">
                       <div
                           class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
-                        <span class="text-white text-[42px] leading-[50px] num-bold-style">462 681</span><span
-                          class="text-green text-[24px] leading-[50px] num-bold-style">+62</span>
+                        <span class="text-white text-[42px] leading-[50px] num-bold-style">{{contractTrxBalance}}</span>
                       </div>
-                      <span class="text-white-700 font-semibold">Accounts count</span></div>
+                      <span class="text-white-700 font-semibold">{{ $t("Total result") }}, TRX</span></div>
                     <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">
                       <div
                           class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
-                        <span class="text-white text-[42px] leading-[50px] num-bold-style">1 826 418 060</span>
+                        <span class="text-white text-[42px] leading-[50px] num-bold-style">{{contractUSDTBalance}}</span>
                       </div>
-                      <span class="text-white-700 font-semibold">Total result, TRX</span></div>
-                    <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">
-                      <div
-                          class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
-                        <span class="text-white text-[42px] leading-[50px] num-bold-style">102 315 939</span>
-                      </div>
-                      <span class="text-white-700 font-semibold">Total result, USD</span></div>
+                      <span class="text-white-700 font-semibold">{{ $t("Total result") }}, USDT</span></div>
                   </div>
                   <div
                       :class="{'hidden':navIndex1!=3}"
@@ -577,14 +570,14 @@
                         <span class="text-white text-[42px] leading-[50px] num-bold-style">923 924</span><span
                           class="text-green text-[24px] leading-[50px] num-bold-style">+3 374</span>
                       </div>
-                      <span class="text-white-700 font-semibold">Accounts count</span></div>
+                      <span class="text-white-700 font-semibold">{{ $t("Accounts count") }}</span></div>
                     <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">
                       <div
                           class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
                         <span class="text-white text-[42px] leading-[50px] num-bold-style">85 547 932</span><span
                           class="text-green text-[24px] leading-[50px] num-bold-style">+598 690</span>
                       </div>
-                      <span class="text-white-700 font-semibold">Total result, BUSD</span></div>
+                      <span class="text-white-700 font-semibold">{{ $t("Total result") }}, BUSD</span></div>
                   </div>
                 </div>
               </div>
@@ -595,8 +588,8 @@
           <div class="py-[100px] flex flex-col max-w-desktop-full w-full px-5 lg:py-[40px]">
             <div class="flex flex-col text-center space-y-[50px] lg:space-y-5">
               <div class="flex flex-col items-center text-center  sm:text-left sm:items-start"><span
-                  class="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">Technology of smart contracts and non-fungible tokens</span><span
-                  class="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">Decentralized marketing is powered by the revolutionary technology of smart contracts and NFTs. The Forsage smart contract code is completely open. You can be sure of its safety and long-term performance</span>
+                  class="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">{{ $t("page4title") }}</span><span
+                  class="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">{{ $t("page4content1") }}</span>
               </div>
               <div class="">
                 <div class="flex justify-center space-x-[50px] lg:space-x-0 lg:hidden">
@@ -617,8 +610,12 @@
                       </svg>
                     </div>
                     <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5"><span
-                        class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">Autonomy</span><span
-                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">The Forsage ecosystem is built around the technology of smart contracts and NFTs, which are completely autonomous and exclude the influence of the human factor.</span>
+                        class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                        $t('Autonomy')
+                      }}</span><span
+                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                        $t('page4listContent1')
+                      }}</span>
                     </div>
                   </div>
                   <div
@@ -645,8 +642,12 @@
                     </div>
                     <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">Unchanging conditions</span><span
-                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">The algorithm is stored on the blockchain, so no one, even the authors of the idea, can intervene, cancel or change your transactions.</span>
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t("Unchanging conditions")
+                                  }}</span><span
+                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                        $t('page4listContent2')
+                      }}</span>
                     </div>
                   </div>
                   <div
@@ -669,8 +670,12 @@
                     </div>
                     <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">Transparency</span><span
-                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">The smart contract code is stored in the public domain, and anyone can view the entire transaction history at any time. This ensures fair conditions and reliable statistics that you can rely on.</span>
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t('Transparency')
+                                  }}</span><span
+                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                        $t('page4listContent3')
+                      }}</span>
                     </div>
                   </div>
                   <div
@@ -690,8 +695,12 @@
                     </div>
                     <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">Full automation</span><span
-                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">All transactions between community members take place directly from one personal wallet to another. Participants do not have accounts within the system from which to withdraw funds, since Forsage does not store your assets.</span>
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t('Full automation')
+                                  }}</span><span
+                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                        $t('page4listContent4')
+                      }}</span>
                     </div>
                   </div>
                   <div
@@ -711,8 +720,12 @@
                     </div>
                     <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">Decentralization</span><span
-                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">No one, not even the creators of the code, can make changes to the work of Forsage smart contracts.</span>
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t('Decentralization')
+                                  }}</span><span
+                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                        $t('page4listContent5')
+                      }}</span>
                     </div>
                   </div>
                   <div
@@ -732,8 +745,12 @@
                     </div>
                     <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">100% online</span><span
-                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">There are no hidden costs or service fees. The smart contract balance is always zero.</span>
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t('100% online')
+                                  }}</span><span
+                        class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                        $t('page4listContent6')
+                      }}</span>
                     </div>
                   </div>
                   <div class="flex flex-col justify-center w-full max-w-[330px] space-y-1.5 lg:hidden">
@@ -741,37 +758,37 @@
                         @click="navIndex2=0"
                         :class="{'bg-white-200 text-white':navIndex2==0}"
                         class="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer border-white-200 ">
-                      Autonomy
+                      {{ $t('Autonomy') }}
                     </div>
                     <div
                         @click="navIndex2=1"
                         :class="{'bg-white-200 text-white':navIndex2==1}"
                         class="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
-                      Unchanging conditions
+                      {{ $t("Unchanging conditions") }}
                     </div>
                     <div
                         @click="navIndex2=2"
                         :class="{'bg-white-200 text-white':navIndex2==2}"
                         class="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
-                      Transparency
+                      {{ $t('Transparency') }}
                     </div>
                     <div
                         @click="navIndex2=3"
                         :class="{'bg-white-200 text-white':navIndex2==3}"
                         class="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
-                      Full automation
+                      {{ $t('Full automation') }}
                     </div>
                     <div
                         @click="navIndex2=4"
                         :class="{'bg-white-200 text-white':navIndex2==4}"
                         class="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
-                      Decentralization
+                      {{ $t('Decentralization') }}
                     </div>
                     <div
                         @click="navIndex2=5"
                         :class="{'bg-white-200 text-white':navIndex2==5}"
                         class="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
-                      100% online
+                      {{ $t('100% online') }}
                     </div>
                   </div>
                 </div>
@@ -814,8 +831,12 @@
                               </div>
                               <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">100% online</span><span
-                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">There are no hidden costs or service fees. The smart contract balance is always zero.</span>
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t('100% online')
+                                  }}</span><span
+                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                                  $t('page4listContent6')
+                                }}</span>
                               </div>
                             </div>
                           </li>
@@ -836,7 +857,9 @@
                               </div>
                               <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">Autonomy</span><span
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t('Autonomy')
+                                  }}</span><span
                                   class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">The Forsage ecosystem is built around the technology of smart contracts and NFTs, which are completely autonomous and exclude the influence of the human factor.</span>
                               </div>
                             </div>
@@ -864,8 +887,12 @@
                               </div>
                               <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">Unchanging conditions</span><span
-                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">The algorithm is stored on the blockchain, so no one, even the authors of the idea, can intervene, cancel or change your transactions.</span>
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t("Unchanging conditions")
+                                  }}</span><span
+                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                                  $t('page4listContent2')
+                                }}</span>
                               </div>
                             </div>
                           </li>
@@ -889,8 +916,12 @@
                               </div>
                               <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">Transparency</span><span
-                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">The smart contract code is stored in the public domain, and anyone can view the entire transaction history at any time. This ensures fair conditions and reliable statistics that you can rely on.</span>
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t('Transparency')
+                                  }}</span><span
+                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                                  $t('page4listContent3')
+                                }}</span>
                               </div>
                             </div>
                           </li>
@@ -911,8 +942,12 @@
                               </div>
                               <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">Full automation</span><span
-                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">All transactions between community members take place directly from one personal wallet to another. Participants do not have accounts within the system from which to withdraw funds, since Forsage does not store your assets.</span>
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t('Full automation')
+                                  }}</span><span
+                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                                  $t('page4listContent4')
+                                }}</span>
                               </div>
                             </div>
                           </li>
@@ -933,8 +968,12 @@
                               </div>
                               <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">Decentralization</span><span
-                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">No one, not even the creators of the code, can make changes to the work of Forsage smart contracts.</span>
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t('Decentralization')
+                                  }}</span><span
+                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                                  $t('page4listContent5')
+                                }}</span>
                               </div>
                             </div>
                           </li>
@@ -955,8 +994,12 @@
                               </div>
                               <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">100% online</span><span
-                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">There are no hidden costs or service fees. The smart contract balance is always zero.</span>
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t('100% online')
+                                  }}</span><span
+                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">{{
+                                  $t('page4listContent6')
+                                }}</span>
                               </div>
                             </div>
                           </li>
@@ -977,7 +1020,9 @@
                               </div>
                               <div class="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                                 <span
-                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">Autonomy</span><span
+                                    class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
+                                    $t('Autonomy')
+                                  }}</span><span
                                   class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">The Forsage ecosystem is built around the technology of smart contracts and NFTs, which are completely autonomous and exclude the influence of the human factor.</span>
                               </div>
                             </div>
@@ -996,8 +1041,12 @@
         <div class="flex flex-col items-center ">
           <div class="py-[100px] flex flex-col max-w-desktop-full w-full px-5 lg:py-[40px]">
             <div class="flex flex-col items-center text-center  sm:text-left sm:items-start"><span
-                class="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">Convenient office</span><span
-                class="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">Interactive online visualization of active slots showing your unique NFT collection and your financial progress.</span>
+                class="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">{{
+                $t('page5title')
+              }}</span><span
+                class="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">{{
+                $t('page5content')
+              }}</span>
             </div>
             <div class="relative flex justify-center items-center bg-gradient sm:mt-5"><img
                 src="../assets/cabinet_preview.png" class="max-w-full sm:max-w-[90vw]"
@@ -1007,7 +1056,9 @@
         <div class="flex flex-col items-center ">
           <div class="py-[100px] flex flex-col max-w-desktop-full w-full px-5 lg:py-[40px]">
             <div class="flex flex-col items-center text-center  sm:text-left sm:items-start"><span
-                class="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[60px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">Frequently asked Questions</span>
+                class="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[60px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">{{
+                $t('page6title')
+              }}</span>
             </div>
             <div data-accordion-component="Accordion" class="accordion">
               <div class="relative flex flex-col w-full">
@@ -1027,13 +1078,15 @@
                   <div class="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
                     <div data-accordion-component="AccordionItemHeading" role="heading"
                          class="accordion__heading" aria-level="3"
-                      @click="hide1=!hide1"
+                         @click="hide1=!hide1"
                     >
                       <div class="accordion__button" id="accordion__heading-raa-0" aria-disabled="false"
                            aria-expanded="false" aria-controls="accordion__panel-raa-0" role="button"
                            tabindex="0" data-accordion-component="AccordionItemButton">
                         <div class="flex items-center justify-between space-x-2.5"><span
-                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">Why is Forsage the best alternative to trading?</span>
+                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">{{
+                            $t('page6listTitle1')
+                          }}</span>
                           <div
                               :class="{'bg-purple rotate-180':!hide1}"
                               class="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500   sm:w-[30px] sm:h-[30px]">
@@ -1050,8 +1103,12 @@
                       <div
                           class="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
                                         <span class="transition-opacity duration-500 ease-in-out"><div
-                                            class="space-y-1.5">The cryptocurrency rate has no effect on the sustainability of the rewards.<ul
-                                            class="space-y-1.5"><li>The minimum entry threshold is equal to just a couple of cups of coffee.</li><li>There is no need to wait for payouts - funds come instantly to your wallet.</li><li>Rewards always depend only on the actions of the participant.</li><li>The participant can receive the reward indefinitely, as long as he expands his team.</li></ul></div></span>
+                                            class="space-y-1.5">{{ $t('page6listContent1part1') }}<ul
+                                            class="space-y-1.5"><li>{{ $t('page6listContent1part2') }}</li><li>{{
+                                            $t('page6listContent1part3')
+                                          }}</li><li>{{ $t('page6listContent1part4') }}</li><li>{{
+                                            $t('page6listContent1part5')
+                                          }}</li></ul></div></span>
                       </div>
                     </div>
                   </div>
@@ -1066,7 +1123,9 @@
                            aria-expanded="false" aria-controls="accordion__panel-raa-1" role="button"
                            tabindex="0" data-accordion-component="AccordionItemButton">
                         <div class="flex items-center justify-between space-x-2.5"><span
-                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">Is Forsage safe?</span>
+                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">{{
+                            $t('page6listTitle2')
+                          }}</span>
                           <div
                               :class="{'bg-purple rotate-180':!hide2}"
                               class="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500   sm:w-[30px] sm:h-[30px]">
@@ -1082,7 +1141,9 @@
                          aria-hidden="true" id="accordion__panel-raa-1" :hidden="hide2">
                       <div
                           class="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
-                        <span class="transition-opacity duration-500 ease-in-out"><span>The functioning of Forsage is fully blockchain-protected. Participant leaves no personal data and has only his cryptocurrency wallet address connected via WEB 3.0 technology as a login. The entire Forsage infrastructure is built on the operation of tamper-proof smart contracts, and the website is simply a projection of data from the blockchain. It makes no sense to hack into the website.</span></span>
+                        <span class="transition-opacity duration-500 ease-in-out"><span>{{
+                            $t('page6listContent2')
+                          }}</span></span>
                       </div>
                     </div>
                   </div>
@@ -1097,7 +1158,9 @@
                            aria-expanded="false" aria-controls="accordion__panel-raa-2" role="button"
                            tabindex="0" data-accordion-component="AccordionItemButton">
                         <div class="flex items-center justify-between space-x-2.5"><span
-                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">How much does it cost to participate in Forsage BUSD?</span>
+                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">{{
+                            $t('page6listTitle3')
+                          }}</span>
                           <div
                               :class="{'bg-purple rotate-180':!hide3}"
                               class="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500   sm:w-[30px] sm:h-[30px]">
@@ -1110,10 +1173,12 @@
                       </div>
                     </div>
                     <div data-accordion-component="AccordionItemPanel" class="accordion__panel"
-                         aria-hidden="true" id="accordion__panel-raa-2"  :hidden="hide3">
+                         aria-hidden="true" id="accordion__panel-raa-2" :hidden="hide3">
                       <div
                           class="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
-                        <span class="transition-opacity duration-500 ease-in-out"><span>Participation in Forsage BUSD is the automatic activation of NFT levels in two marketing programs. Activation costs start at 10 BUSD, not including minimum fees from the Smart Chain (BNB Chain) blockchain in the BNB cryptocurrency.</span></span>
+                        <span class="transition-opacity duration-500 ease-in-out"><span>{{
+                            $t('page6listContent3')
+                          }}</span></span>
                       </div>
                     </div>
                   </div>
@@ -1127,7 +1192,9 @@
                            aria-expanded="false" aria-controls="accordion__panel-raa-3" role="button"
                            tabindex="0" data-accordion-component="AccordionItemButton">
                         <div class="flex items-center justify-between space-x-2.5"><span
-                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">What do I need to get started in Forsage BUSD?</span>
+                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">{{
+                            $t('page6listTitle4')
+                          }}</span>
                           <div
                               :class="{'bg-purple rotate-180':!hide4}"
                               class="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500   sm:w-[30px] sm:h-[30px]">
@@ -1143,20 +1210,25 @@
                          aria-hidden="true" id="accordion__panel-raa-3" :hidden="hide4">
                       <div
                           class="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
-                        <span class="transition-opacity duration-500 ease-in-out"><span>No special knowledge is required. Every participant must have their own smartphone or laptop with an installed app (Trust Wallet, TokenPocket or MetaMask), which has a personal Smart Chain (BNB Chain) cryptocurrency wallet set up. To register, you need to have at least a minimum amount - 10 BUSD, and some BNB for a blockchain fee. </span></span>
+                        <span class="transition-opacity duration-500 ease-in-out"><span>{{
+                            $t('page6listContent4')
+                          }} </span></span>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div data-accordion-component="AccordionItem" class="accordion__item">
-                  <div class="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5"   @click="hide5=!hide5">
+                  <div class="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5"
+                       @click="hide5=!hide5">
                     <div data-accordion-component="AccordionItemHeading" role="heading"
                          class="accordion__heading" aria-level="3">
                       <div class="accordion__button" id="accordion__heading-raa-4" aria-disabled="false"
                            aria-expanded="false" aria-controls="accordion__panel-raa-4" role="button"
                            tabindex="0" data-accordion-component="AccordionItemButton">
                         <div class="flex items-center justify-between space-x-2.5"><span
-                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">How do I start?</span>
+                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">{{
+                            $t('page6listTitle5')
+                          }}</span>
                           <div
                               :class="{'bg-purple rotate-180':!hide5}"
                               class="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500   sm:w-[30px] sm:h-[30px]">
@@ -1173,23 +1245,28 @@
                       <div
                           class="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
                                         <span class="transition-opacity duration-500 ease-in-out"><div
-                                            class="space-y-1.5">Register on the website to gain access to the Forsage Academy and Community.<ul
-                                            class="space-y-1.5"><li>Study the instructions, guides and articles on marketing so you're ready to go. If you have questions and need assistance, get help from other members in the Forsage Telegram Group:
+                                            class="space-y-1.5">{{ $t('page6listContent5part1') }}<ul
+                                            class="space-y-1.5"><li>{{ $t('page6listContent5part2') }}
                                           <!-- --> &nbsp;<a class="underline" target="_blank"
-                                                            href="https://t.me/smartpeoplechat">t.me/smartpeoplechat</a></li><li>Activate NFT heroes and use them to make progress with your team.</li></ul></div></span>
+                                                            href="https://t.me/smartpeoplechat">t.me/smartpeoplechat</a></li><li>{{
+                                            $t('page6listContent5part3')
+                                          }}</li></ul></div></span>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div data-accordion-component="AccordionItem" class="accordion__item">
-                  <div class="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5"   @click="hide6=!hide6">
+                  <div class="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5"
+                       @click="hide6=!hide6">
                     <div data-accordion-component="AccordionItemHeading" role="heading"
                          class="accordion__heading" aria-level="3">
                       <div class="accordion__button" id="accordion__heading-raa-5" aria-disabled="false"
                            aria-expanded="false" aria-controls="accordion__panel-raa-5" role="button"
                            tabindex="0" data-accordion-component="AccordionItemButton">
                         <div class="flex items-center justify-between space-x-2.5"><span
-                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">Where will my profit come from?</span>
+                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">{{
+                            $t('page6listTitle6')
+                          }}</span>
                           <div
                               :class="{'bg-purple rotate-180':!hide6}"
                               class="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500   sm:w-[30px] sm:h-[30px]">
@@ -1205,20 +1282,25 @@
                          aria-hidden="true" id="accordion__panel-raa-5" :hidden="hide6">
                       <div
                           class="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
-                        <span class="transition-opacity duration-500 ease-in-out"><span>All earnings to your wallet will only come from the activity of other members who open NFT cards. Forsage does not charge any additional fees.</span></span>
+                        <span class="transition-opacity duration-500 ease-in-out"><span>{{
+                            $t('page6listContent6')
+                          }}</span></span>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div data-accordion-component="AccordionItem" class="accordion__item">
-                  <div class="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5"   @click="hide7=!hide7">
+                  <div class="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5"
+                       @click="hide7=!hide7">
                     <div data-accordion-component="AccordionItemHeading" role="heading"
                          class="accordion__heading" aria-level="3">
                       <div class="accordion__button" id="accordion__heading-raa-6" aria-disabled="false"
                            aria-expanded="false" aria-controls="accordion__panel-raa-6" role="button"
                            tabindex="0" data-accordion-component="AccordionItemButton">
                         <div class="flex items-center justify-between space-x-2.5"><span
-                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">What role do NFT tokens play in Forsage?</span>
+                            class="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">{{
+                            $t('page6listTitle7')
+                          }}</span>
                           <div
                               :class="{'bg-purple rotate-180':!hide7}"
                               class="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500   sm:w-[30px] sm:h-[30px]">
@@ -1234,7 +1316,9 @@
                          aria-hidden="true" id="accordion__panel-raa-6" :hidden="hide7">
                       <div
                           class="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
-                        <span class="transition-opacity duration-500 ease-in-out"><span>NFT tokens are combined into collections with several million unique characters that are grouped by marketing plan (x3, x4, xXx, xGold). Each marketing plan is unique in its own way. Learn more about the marketing plans in this article.</span></span>
+                        <span class="transition-opacity duration-500 ease-in-out"><span>{{
+                            $t('page6listContent7')
+                          }}</span></span>
                       </div>
                     </div>
                   </div>
@@ -1248,181 +1332,154 @@
             <div class="flex flex-col items-center text-center  sm:text-left sm:items-start"><span
                 class="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[60px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">Official channels</span>
             </div>
-            <div class="flex items-start w-full justify-evenly lg:flex-wrap sm:justify-around"><a
-                class="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
-                target="_blank" href="https://t.me/forsageio_official">
-              <div
-                  class="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
-                <svg class="w-6 h-6" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
-                        fill="#fff"></path>
-                </svg>
-              </div>
-              <span class="max-w-[90px] group-hover:text-white">Telegram channel</span></a><a
-                class="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
-                target="_blank" href="https://t.me/smartpeoplechat">
-              <div
-                  class="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
-                <svg class="w-6 h-6" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
-                        fill="#fff"></path>
-                </svg>
-              </div>
-              <span class="max-w-[90px] group-hover:text-white">Telegram chat</span></a><a
-                class="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
-                target="_blank" href="https://twitter.com/forsageofficial">
-              <div
-                  class="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
-                <svg class="w-6 h-6" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M29.494 2.845c-1.104.488-2.275.81-3.474.956a6.074 6.074 0 0 0 2.66-3.35c-1.168.694-2.46 1.2-3.842 1.468a6.052 6.052 0 0 0-10.312 5.52A17.148 17.148 0 0 1 2.05 1.107a6.058 6.058 0 0 0 1.88 8.088 5.93 5.93 0 0 1-2.75-.756v.074a6.056 6.056 0 0 0 4.856 5.938 6.11 6.11 0 0 1-1.592.212c-.388 0-.768-.036-1.138-.112a6.062 6.062 0 0 0 5.658 4.206A12.134 12.134 0 0 1 0 21.263a16.918 16.918 0 0 0 9.262 2.738c11.144 0 17.232-9.23 17.232-17.238 0-.262-.008-.524-.02-.78a12.32 12.32 0 0 0 3.02-3.138Z"
-                        fill="#fff"></path>
-                </svg>
-              </div>
-              <span class="max-w-[90px] group-hover:text-white">Twitter</span></a><a
-                class="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
-                target="_blank" href="https://www.instagram.com/forsagematrix/">
-              <div
-                  class="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
-                <svg class="w-6 h-6" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M14.756 0c2.497.004 2.987.022 4.206.078 1.383.063 2.328.283 3.155.604.855.333 1.58.777 2.303 1.5a6.372 6.372 0 0 1 1.5 2.303c.32.826.54 1.772.604 3.155.06 1.303.076 1.772.078 4.752v1.217c-.002 2.98-.019 3.449-.078 4.751-.063 1.384-.283 2.33-.605 3.156a6.372 6.372 0 0 1-1.5 2.303 6.373 6.373 0 0 1-2.302 1.5c-.827.32-1.772.54-3.155.604-1.261.057-1.742.075-4.471.078h-1.779c-2.73-.003-3.21-.02-4.47-.078-1.385-.063-2.33-.283-3.156-.604a6.374 6.374 0 0 1-2.303-1.5 6.373 6.373 0 0 1-1.5-2.303c-.321-.827-.54-1.772-.604-3.155-.056-1.22-.074-1.709-.077-4.206v-2.31C.605 9.348.623 8.86.679 7.64c.063-1.383.283-2.329.604-3.155a6.373 6.373 0 0 1 1.5-2.303 6.372 6.372 0 0 1 2.303-1.5C5.912.361 6.857.142 8.24.078 9.46.022 9.95.004 12.446 0h2.31Zm5.946 4.5a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Zm-7.1 1.5a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm0 11.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z"
-                        fill="#fff"></path>
-                </svg>
-              </div>
-              <span class="max-w-[90px] group-hover:text-white">Instagram</span></a><a
-                class="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
-                target="_blank" href="https://www.youtube.com/channel/UC4ZUzYVAw01R9ERwBte-eQA">
-              <div
-                  class="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
-                <svg class="w-6 h-6" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                      d="M32.82 3.755c-.38-1.468-1.495-2.626-2.908-3.021C27.329 0 17 0 17 0S6.67 0 4.088.706c-1.386.395-2.528 1.581-2.908 3.05C.5 6.437.5 12 .5 12s0 5.59.68 8.245c.38 1.468 1.494 2.625 2.908 3.02C6.698 24 17 24 17 24s10.33 0 12.912-.706c1.413-.395 2.528-1.553 2.909-3.021.679-2.683.679-8.245.679-8.245s.027-5.59-.68-8.273ZM13.71 17.14V6.86L22.3 12l-8.59 5.139Z"
-                      fill="#fff"></path>
-                </svg>
-              </div>
-              <span class="max-w-[90px] group-hover:text-white">YouTube</span></a></div>
+            <div style="width: 40%;margin: 0 auto"
+                 class="flex items-start  justify-evenly lg:flex-wrap sm:justify-around">
+              <a
+                  class="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
+                  target="_blank" :href="telegramChannel">
+                <div
+                    class="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
+                  <svg class="w-6 h-6" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
+                          fill="#fff"></path>
+                  </svg>
+                </div>
+                <span class="max-w-[90px] group-hover:text-white">Telegram channel</span></a>
+              <a
+                  class="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
+                  target="_blank" :href="telegramChat">
+                <div
+                    class="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
+                  <svg class="w-6 h-6" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
+                          fill="#fff"></path>
+                  </svg>
+                </div>
+                <span class="max-w-[90px] group-hover:text-white">Telegram chat</span>
+              </a>
+              <!--              <a-->
+              <!--                class="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"-->
+              <!--                target="_blank" :href="twitterUrl">-->
+              <!--                <div-->
+              <!--                  class="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">-->
+              <!--                  <svg class="w-6 h-6" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+              <!--                    <path fill-rule="evenodd" clip-rule="evenodd"-->
+              <!--                          d="M29.494 2.845c-1.104.488-2.275.81-3.474.956a6.074 6.074 0 0 0 2.66-3.35c-1.168.694-2.46 1.2-3.842 1.468a6.052 6.052 0 0 0-10.312 5.52A17.148 17.148 0 0 1 2.05 1.107a6.058 6.058 0 0 0 1.88 8.088 5.93 5.93 0 0 1-2.75-.756v.074a6.056 6.056 0 0 0 4.856 5.938 6.11 6.11 0 0 1-1.592.212c-.388 0-.768-.036-1.138-.112a6.062 6.062 0 0 0 5.658 4.206A12.134 12.134 0 0 1 0 21.263a16.918 16.918 0 0 0 9.262 2.738c11.144 0 17.232-9.23 17.232-17.238 0-.262-.008-.524-.02-.78a12.32 12.32 0 0 0 3.02-3.138Z"-->
+              <!--                          fill="#fff"></path>-->
+              <!--                  </svg>-->
+              <!--                </div>-->
+              <!--                <span class="max-w-[90px] group-hover:text-white">Twitter</span></a>-->
+              <!--              <a-->
+              <!--                class="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"-->
+              <!--                target="_blank" :href="insUrl">-->
+              <!--                <div-->
+              <!--                  class="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">-->
+              <!--                  <svg class="w-6 h-6" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+              <!--                    <path fill-rule="evenodd" clip-rule="evenodd"-->
+              <!--                          d="M14.756 0c2.497.004 2.987.022 4.206.078 1.383.063 2.328.283 3.155.604.855.333 1.58.777 2.303 1.5a6.372 6.372 0 0 1 1.5 2.303c.32.826.54 1.772.604 3.155.06 1.303.076 1.772.078 4.752v1.217c-.002 2.98-.019 3.449-.078 4.751-.063 1.384-.283 2.33-.605 3.156a6.372 6.372 0 0 1-1.5 2.303 6.373 6.373 0 0 1-2.302 1.5c-.827.32-1.772.54-3.155.604-1.261.057-1.742.075-4.471.078h-1.779c-2.73-.003-3.21-.02-4.47-.078-1.385-.063-2.33-.283-3.156-.604a6.374 6.374 0 0 1-2.303-1.5 6.373 6.373 0 0 1-1.5-2.303c-.321-.827-.54-1.772-.604-3.155-.056-1.22-.074-1.709-.077-4.206v-2.31C.605 9.348.623 8.86.679 7.64c.063-1.383.283-2.329.604-3.155a6.373 6.373 0 0 1 1.5-2.303 6.372 6.372 0 0 1 2.303-1.5C5.912.361 6.857.142 8.24.078 9.46.022 9.95.004 12.446 0h2.31Zm5.946 4.5a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Zm-7.1 1.5a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm0 11.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z"-->
+              <!--                          fill="#fff"></path>-->
+              <!--                  </svg>-->
+              <!--                </div>-->
+              <!--                <span class="max-w-[90px] group-hover:text-white">Instagram</span></a>-->
+              <!--              <a-->
+              <!--                class="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"-->
+              <!--                target="_blank" :href="youtubeUrl">-->
+              <!--                <div-->
+              <!--                  class="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">-->
+              <!--                  <svg class="w-6 h-6" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+              <!--                    <path-->
+              <!--                      d="M32.82 3.755c-.38-1.468-1.495-2.626-2.908-3.021C27.329 0 17 0 17 0S6.67 0 4.088.706c-1.386.395-2.528 1.581-2.908 3.05C.5 6.437.5 12 .5 12s0 5.59.68 8.245c.38 1.468 1.494 2.625 2.908 3.02C6.698 24 17 24 17 24s10.33 0 12.912-.706c1.413-.395 2.528-1.553 2.909-3.021.679-2.683.679-8.245.679-8.245s.027-5.59-.68-8.273ZM13.71 17.14V6.86L22.3 12l-8.59 5.139Z"-->
+              <!--                      fill="#fff"></path>-->
+              <!--                  </svg>-->
+              <!--                </div>-->
+              <!--                <span class="max-w-[90px] group-hover:text-white">YouTube</span></a>-->
+            </div>
           </div>
         </div>
         <div class="flex flex-col items-center w-full text-[15px] leading-[25px] text-white-500">
-          <div
-              class="flex w-full max-w-desktop-full mb-[40px] space-x-[50px] px-5 lg:flex-col lg:px-0 lg:mb-0 lg:space-x-0">
+          <div style="justify-content: center!important;"
+               class="flex w-full max-w-desktop-full mb-[40px] space-x-[50px] px-5 lg:flex-col lg:px-0 lg:mb-0 lg:space-x-0">
             <div
                 class="flex space-x-[50px] lg:flex-col lg:space-x-0 lg:bg-lightGray lg:px-5 lg:pt-[30px] lg:space-y-[30px] lg:order-2">
               <div class="flex flex-col items-start max-w-[250px] w-full flex-shrink-0 lg:max-w-full"><img
-                  src="../assets/logo_grey.webp" class="h-[36px] mb-5 lg:mt-2.5"><span class="">The world's first 100% decentralized matrix platform</span>
+                  src="../assets/logo_grey.webp" class="h-[36px] mb-5 lg:mt-2.5"><span class="">{{
+                  $t('bottomInfo')
+                }}</span>
               </div>
               <div class="flex flex-col space-y-2.5">
                 <div class="flex space-x-5">
                   <div class="flex space-x-1.5 max-w-[100px] w-full flex-shrink-0"><span
-                      class="break-normal">x3 / x4</span><span>eth</span>
+                      class="break-normal">contract</span><span>tron</span>
                   </div>
-                  <a class="text-white font-semibold hover:text-white-900 hover:underline"
-                     href="https://etherscan.io/address/0x5acc84a3e955Bdd76467d3348077d003f00fFB97">0x5acc...FB97</a>
+                  <a class="text-white font-semibold hover:text-white-900 hover:underline" target="_blank"
+                     :href="'https://tronscan.org/#/address/' + contractAddress">{{ tronAddress1.substr(0,6) +"..." + tronAddress1.substr(tronAddress1.length-4,tronAddress1.length) }}</a>
                 </div>
-                <div class="flex space-x-5">
-                  <div class="flex space-x-1.5 max-w-[100px] w-full flex-shrink-0"><span
-                      class="break-normal">xGold</span><span>eth</span>
-                  </div>
-                  <a class="text-white font-semibold hover:text-white-900 hover:underline"
-                     href="https://etherscan.io/address/0x488e3a4Bbbb2386bA619Eed88319E807C3dDb6C2">0x488e...b6C2</a>
-                </div>
-                <div class="flex space-x-5">
-                  <div class="flex space-x-1.5 max-w-[100px] w-full flex-shrink-0"><span
-                      class="break-normal">x3 / x4</span><span>tron</span>
-                  </div>
-                  <a class="text-white font-semibold hover:text-white-900 hover:underline"
-                     href="https://tronscan.org/#/contract/TREbha3Jj6TrpT7e6Z5ukh3NRhyxHsmMug">TREbha...</a>
-                </div>
-                <div class="flex space-x-5">
-                  <div class="flex space-x-1.5 max-w-[100px] w-full flex-shrink-0"><span
-                      class="break-normal">xGold</span><span>tron</span>
-                  </div>
-                  <a class="text-white font-semibold hover:text-white-900 hover:underline"
-                     href="https://tronscan.org/#/contract/TA6p1BnBf2HJgc77Zk8BHmHoiJzquLCKWb">TA6p1B...</a>
-                </div>
-                <div class="flex space-x-5">
-                  <div class="flex space-x-1.5 max-w-[100px] w-full flex-shrink-0"><span
-                      class="break-normal">x3 / x4</span><span>busd</span>
-                  </div>
-                  <a class="text-white font-semibold hover:text-white-900 hover:underline"
-                     href="https://bscscan.com/address/0x5acc84a3e955Bdd76467d3348077d003f00fFB97">0x5acc...FB97</a>
-                </div>
-                <div class="flex space-x-5">
-                  <div class="flex space-x-1.5 max-w-[100px] w-full flex-shrink-0"><span class="break-normal">xXx</span><span>busd</span>
-                  </div>
-                  <a class="text-white font-semibold hover:text-white-900 hover:underline"
-                     href="https://bscscan.com/address/0x2CAa4694cB7Daf7d49A198dC1103C06d4991ae52">0x2CAa...ae52</a>
-                </div>
-                <div class="flex space-x-5">
-                  <div class="flex space-x-1.5 max-w-[100px] w-full flex-shrink-0"><span
-                      class="break-normal">xGold</span><span>busd</span>
-                  </div>
-                  <a class="text-white font-semibold hover:text-white-900 hover:underline"
-                     href="https://bscscan.com/address/0x98872a66D0749C720D8Dc1A80d496b24B04ff7C5">0x9887...f7C5</a>
-                </div>
+
               </div>
             </div>
-            <div class="flex flex-wrap flex-1 sm:px-2.5 sm:mb-10">
-              <div class="flex justify-center items-center w-1/2 text-[15px] leading-[20px] p-5 sm:p-2.5"><a
-                  class="flex justify-center items-center w-full h-full rounded-[15px] cursor-pointer hover:bg-white-50 p-2.5"
-                  target="_blank" href="https://busd.forsage.io/">
-                <svg class="w-[30px] h-[30px] mr-5" viewBox="0 0 22 22" fill="#fff"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M10.972 0 4.605 6.428 6.377 8.2l6.376-6.377L10.973 0Zm4.605 3.327 3.03 3.104-12.23 12.23 12.23-12.23-3.03-3.104ZM3.346 15.631l1.518 1.518-1.518-1.518ZM15.571 4.599 4.606 15.629l1.77 1.77L17.352 6.423 15.571 4.6ZM0 11.024l1.776-1.818 1.776 1.818-1.776 1.777L0 11.024Zm20.177-3.096h.001ZM7.947 20.23ZM20.172 9.2 9.206 20.229 10.976 22l10.977-10.976-1.781-1.825Z"></path>
-                </svg>
-                <span class="max-w-[75px] text-left text-white font-semibold">Forsage BUSD</span></a></div>
-              <div class="flex justify-center items-center w-1/2 text-[15px] leading-[20px] p-5 sm:p-2.5"><a
-                  class="flex justify-center items-center w-full h-full rounded-[15px] cursor-pointer hover:bg-white-50 p-2.5"
-                  target="_blank" href="https://trx.forsage.io/auth/">
-                <svg class="w-[30px] h-[30px] mr-5" viewBox="0 0 24 24" fill="#fff"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path
-                      d="m22.79 7.815-4.02-3.674a.855.855 0 0 0-.439-.215L1.797 1.01c-.522-.092-.943.4-.748.873l8.59 20.709c.187.458.818.55 1.145.17L22.848 8.692a.625.625 0 0 0-.057-.876Zm-5.873-2.908-5.031 4.02-7.927-6.301 12.958 2.281Zm-6.882 15.366L3.06 3.463l8.26 6.582-1.284 10.228Zm1.255.014 1.23-9.711 8.325-1.444-9.555 11.155Zm2.237-11.093 4.765-3.818 2.755 2.51-7.52 1.308Z"></path>
-                </svg>
-                <span class="max-w-[75px] text-left text-white font-semibold">Forsage TRX</span></a></div>
-              <div class="flex justify-center items-center w-1/2 text-[15px] leading-[20px] p-5 sm:p-2.5"><a
-                  class="flex justify-center items-center w-full h-full rounded-[15px] cursor-pointer hover:bg-white-50 p-2.5"
-                  target="_blank" href="https://lk.forsage.io/auth/">
-                <svg class="w-[30px] h-[30px] mr-5" viewBox="0 0 28 28" fill="#fff"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M14.728 3.015a.875.875 0 0 0-1.456 0l-7 10.5a.874.874 0 0 0 0 .97l7 10.5a.875.875 0 0 0 1.456 0l6.997-10.496a.874.874 0 0 0 0-.979L14.728 3.015Zm3.716 8.729L14 5.077l-4.444 6.667 4.053-2.027a.875.875 0 0 1 .782 0l4.053 2.027Zm-9.301 3.893L14 22.922l4.857-7.286-4.58 1.526a.875.875 0 0 1-.554 0l-4.58-1.527ZM14 15.41l-4.72-1.573 4.72-2.36 4.72 2.36L14 15.41Z"></path>
-                </svg>
-                <span class="max-w-[75px] text-left text-white font-semibold">Forsage ETH</span></a></div>
-              <div class="flex justify-center items-center w-1/2 text-[15px] leading-[20px] p-5 sm:p-2.5"><a
-                  class="flex justify-center items-center w-full h-full rounded-[15px] cursor-pointer hover:bg-white-50 p-2.5"
-                  target="_blank" href="https://support.forsage.io/">
-                <svg class="w-[30px] h-[30px] mr-5" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#a)" stroke="#fff" stroke-width="2" stroke-linecap="round"
-                     stroke-linejoin="round">
-                    <path
-                        d="M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM9 7h6m-6 4h6m-6 4h4"></path>
-                  </g>
-                  <defs>
-                    <clippath id="a">
-                      <path fill="#fff" d="M0 0h24v24H0z"></path>
-                    </clippath>
-                  </defs>
-                </svg>
-                <span class="max-w-[75px] text-left text-white font-semibold">Forsage Support</span></a></div>
-            </div>
+            <!--            <div class="flex flex-wrap flex-1 sm:px-2.5 sm:mb-10">-->
+            <!--              <div class="flex justify-center items-center w-1/2 text-[15px] leading-[20px] p-5 sm:p-2.5"><a-->
+            <!--                class="flex justify-center items-center w-full h-full rounded-[15px] cursor-pointer hover:bg-white-50 p-2.5"-->
+            <!--                target="_blank" href="https://busd.forsage.io/">-->
+            <!--                <svg class="w-[30px] h-[30px] mr-5" viewBox="0 0 22 22" fill="#fff"-->
+            <!--                     xmlns="http://www.w3.org/2000/svg">-->
+            <!--                  <path fill-rule="evenodd" clip-rule="evenodd"-->
+            <!--                        d="M10.972 0 4.605 6.428 6.377 8.2l6.376-6.377L10.973 0Zm4.605 3.327 3.03 3.104-12.23 12.23 12.23-12.23-3.03-3.104ZM3.346 15.631l1.518 1.518-1.518-1.518ZM15.571 4.599 4.606 15.629l1.77 1.77L17.352 6.423 15.571 4.6ZM0 11.024l1.776-1.818 1.776 1.818-1.776 1.777L0 11.024Zm20.177-3.096h.001ZM7.947 20.23ZM20.172 9.2 9.206 20.229 10.976 22l10.977-10.976-1.781-1.825Z"></path>-->
+            <!--                </svg>-->
+            <!--                <span class="max-w-[75px] text-left text-white font-semibold">Forsage BUSD</span></a></div>-->
+            <!--              <div class="flex justify-center items-center w-1/2 text-[15px] leading-[20px] p-5 sm:p-2.5"><a-->
+            <!--                class="flex justify-center items-center w-full h-full rounded-[15px] cursor-pointer hover:bg-white-50 p-2.5"-->
+            <!--                target="_blank" href="https://trx.forsage.io/auth/">-->
+            <!--                <svg class="w-[30px] h-[30px] mr-5" viewBox="0 0 24 24" fill="#fff"-->
+            <!--                     xmlns="http://www.w3.org/2000/svg">-->
+            <!--                  <path-->
+            <!--                    d="m22.79 7.815-4.02-3.674a.855.855 0 0 0-.439-.215L1.797 1.01c-.522-.092-.943.4-.748.873l8.59 20.709c.187.458.818.55 1.145.17L22.848 8.692a.625.625 0 0 0-.057-.876Zm-5.873-2.908-5.031 4.02-7.927-6.301 12.958 2.281Zm-6.882 15.366L3.06 3.463l8.26 6.582-1.284 10.228Zm1.255.014 1.23-9.711 8.325-1.444-9.555 11.155Zm2.237-11.093 4.765-3.818 2.755 2.51-7.52 1.308Z"></path>-->
+            <!--                </svg>-->
+            <!--                <span class="max-w-[75px] text-left text-white font-semibold">Forsage TRX</span></a></div>-->
+            <!--              <div class="flex justify-center items-center w-1/2 text-[15px] leading-[20px] p-5 sm:p-2.5"><a-->
+            <!--                class="flex justify-center items-center w-full h-full rounded-[15px] cursor-pointer hover:bg-white-50 p-2.5"-->
+            <!--                target="_blank" href="https://lk.forsage.io/auth/">-->
+            <!--                <svg class="w-[30px] h-[30px] mr-5" viewBox="0 0 28 28" fill="#fff"-->
+            <!--                     xmlns="http://www.w3.org/2000/svg">-->
+            <!--                  <path fill-rule="evenodd" clip-rule="evenodd"-->
+            <!--                        d="M14.728 3.015a.875.875 0 0 0-1.456 0l-7 10.5a.874.874 0 0 0 0 .97l7 10.5a.875.875 0 0 0 1.456 0l6.997-10.496a.874.874 0 0 0 0-.979L14.728 3.015Zm3.716 8.729L14 5.077l-4.444 6.667 4.053-2.027a.875.875 0 0 1 .782 0l4.053 2.027Zm-9.301 3.893L14 22.922l4.857-7.286-4.58 1.526a.875.875 0 0 1-.554 0l-4.58-1.527ZM14 15.41l-4.72-1.573 4.72-2.36 4.72 2.36L14 15.41Z"></path>-->
+            <!--                </svg>-->
+            <!--                <span class="max-w-[75px] text-left text-white font-semibold">Forsage ETH</span></a></div>-->
+            <!--              <div class="flex justify-center items-center w-1/2 text-[15px] leading-[20px] p-5 sm:p-2.5"><a-->
+            <!--                class="flex justify-center items-center w-full h-full rounded-[15px] cursor-pointer hover:bg-white-50 p-2.5"-->
+            <!--                target="_blank" :href="documentUrl">-->
+            <!--                <svg class="w-[30px] h-[30px] mr-5" viewBox="0 0 24 24" fill="none"-->
+            <!--                     xmlns="http://www.w3.org/2000/svg">-->
+            <!--                  <g clip-path="url(#a)" stroke="#fff" stroke-width="2" stroke-linecap="round"-->
+            <!--                     stroke-linejoin="round">-->
+            <!--                    <path-->
+            <!--                      d="M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM9 7h6m-6 4h6m-6 4h4"></path>-->
+            <!--                  </g>-->
+            <!--                  <defs>-->
+            <!--                    <clippath id="a">-->
+            <!--                      <path fill="#fff" d="M0 0h24v24H0z"></path>-->
+            <!--                    </clippath>-->
+            <!--                  </defs>-->
+            <!--                </svg>-->
+            <!--                <span class="max-w-[75px] text-left text-white font-semibold">Forsage Support</span></a>-->
+            <!--              </div>-->
+            <!--            </div>-->
           </div>
           <div class="flex justify-center bg-lightGray w-full">
             <div
                 class="flex justify-between items-center max-w-desktop-full w-full pt-[40px] pb-[40px]  px-5 lg:pt-10 lg:flex-col lg:items-start lg:pb-5">
               <div class="flex items-center space-x-[50px] lg:space-x-0 lg:flex-col ">
                 <div class="flex flex-col space-y-[5px] max-w-[250px] w-full lg:order-2"><span>© <!-- -->2022
-                  <!-- --> All Rights Reserved </span><a
-                    class="text-white hover:text-white-900 hover:underline"
-                    href="https://forsage.io/docs/forsageDisclaimerEN.pdf">Disclaimer</a></div>
+                  <!-- --> All Rights Reserved </span>
+                  <!--                  <a-->
+                  <!--                  class="text-white hover:text-white-900 hover:underline"-->
+                  <!--                  :href="Disclaimer">Disclaimer</a>-->
+                </div>
                 <div class="flex space-x-3 lg:mb-10"><a
                     class="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"
-                    target="_blank" href="https://t.me/forsageio_official/">
+                    target="_blank" :href="telegramChannel">
                   <svg class="h-4" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                           d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
@@ -1430,79 +1487,95 @@
                   </svg>
                 </a><a
                     class="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"
-                    target="_blank" href="https://t.me/smartpeoplechat/">
+                    target="_blank" :href="telegramChat">
                   <svg class="h-4" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                           d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
                           fill="#fff"></path>
                   </svg>
-                </a><a
-                    class="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"
-                    target="_blank" href="https://twitter.com/forsageofficial/">
-                  <svg class="h-4" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M29.494 2.845c-1.104.488-2.275.81-3.474.956a6.074 6.074 0 0 0 2.66-3.35c-1.168.694-2.46 1.2-3.842 1.468a6.052 6.052 0 0 0-10.312 5.52A17.148 17.148 0 0 1 2.05 1.107a6.058 6.058 0 0 0 1.88 8.088 5.93 5.93 0 0 1-2.75-.756v.074a6.056 6.056 0 0 0 4.856 5.938 6.11 6.11 0 0 1-1.592.212c-.388 0-.768-.036-1.138-.112a6.062 6.062 0 0 0 5.658 4.206A12.134 12.134 0 0 1 0 21.263a16.918 16.918 0 0 0 9.262 2.738c11.144 0 17.232-9.23 17.232-17.238 0-.262-.008-.524-.02-.78a12.32 12.32 0 0 0 3.02-3.138Z"
-                          fill="#fff"></path>
-                  </svg>
-                </a><a
-                    class="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"
-                    target="_blank" href="https://www.instagram.com/forsagematrix/">
-                  <svg class="h-4" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M14.756 0c2.497.004 2.987.022 4.206.078 1.383.063 2.328.283 3.155.604.855.333 1.58.777 2.303 1.5a6.372 6.372 0 0 1 1.5 2.303c.32.826.54 1.772.604 3.155.06 1.303.076 1.772.078 4.752v1.217c-.002 2.98-.019 3.449-.078 4.751-.063 1.384-.283 2.33-.605 3.156a6.372 6.372 0 0 1-1.5 2.303 6.373 6.373 0 0 1-2.302 1.5c-.827.32-1.772.54-3.155.604-1.261.057-1.742.075-4.471.078h-1.779c-2.73-.003-3.21-.02-4.47-.078-1.385-.063-2.33-.283-3.156-.604a6.374 6.374 0 0 1-2.303-1.5 6.373 6.373 0 0 1-1.5-2.303c-.321-.827-.54-1.772-.604-3.155-.056-1.22-.074-1.709-.077-4.206v-2.31C.605 9.348.623 8.86.679 7.64c.063-1.383.283-2.329.604-3.155a6.373 6.373 0 0 1 1.5-2.303 6.372 6.372 0 0 1 2.303-1.5C5.912.361 6.857.142 8.24.078 9.46.022 9.95.004 12.446 0h2.31Zm5.946 4.5a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Zm-7.1 1.5a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm0 11.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z"
-                          fill="#fff"></path>
-                  </svg>
-                </a><a
-                    class="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"
-                    target="_blank" href="https://www.youtube.com/channel/UC4ZUzYVAw01R9ERwBte-eQA/">
-                  <svg class="h-4" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M32.82 3.755c-.38-1.468-1.495-2.626-2.908-3.021C27.329 0 17 0 17 0S6.67 0 4.088.706c-1.386.395-2.528 1.581-2.908 3.05C.5 6.437.5 12 .5 12s0 5.59.68 8.245c.38 1.468 1.494 2.625 2.908 3.02C6.698 24 17 24 17 24s10.33 0 12.912-.706c1.413-.395 2.528-1.553 2.909-3.021.679-2.683.679-8.245.679-8.245s.027-5.59-.68-8.273ZM13.71 17.14V6.86L22.3 12l-8.59 5.139Z"
-                        fill="#fff"></path>
-                  </svg>
-                </a></div>
+                </a>
+                  <!--                  <a-->
+                  <!--                    class="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"-->
+                  <!--                    target="_blank" :href="twitterUrl">-->
+                  <!--                    <svg class="h-4" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                  <!--                      <path fill-rule="evenodd" clip-rule="evenodd"-->
+                  <!--                            d="M29.494 2.845c-1.104.488-2.275.81-3.474.956a6.074 6.074 0 0 0 2.66-3.35c-1.168.694-2.46 1.2-3.842 1.468a6.052 6.052 0 0 0-10.312 5.52A17.148 17.148 0 0 1 2.05 1.107a6.058 6.058 0 0 0 1.88 8.088 5.93 5.93 0 0 1-2.75-.756v.074a6.056 6.056 0 0 0 4.856 5.938 6.11 6.11 0 0 1-1.592.212c-.388 0-.768-.036-1.138-.112a6.062 6.062 0 0 0 5.658 4.206A12.134 12.134 0 0 1 0 21.263a16.918 16.918 0 0 0 9.262 2.738c11.144 0 17.232-9.23 17.232-17.238 0-.262-.008-.524-.02-.78a12.32 12.32 0 0 0 3.02-3.138Z"-->
+                  <!--                            fill="#fff"></path>-->
+                  <!--                    </svg>-->
+                  <!--                  </a><a-->
+                  <!--                    class="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"-->
+                  <!--                    target="_blank" :href="insUrl">-->
+                  <!--                    <svg class="h-4" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                  <!--                      <path fill-rule="evenodd" clip-rule="evenodd"-->
+                  <!--                            d="M14.756 0c2.497.004 2.987.022 4.206.078 1.383.063 2.328.283 3.155.604.855.333 1.58.777 2.303 1.5a6.372 6.372 0 0 1 1.5 2.303c.32.826.54 1.772.604 3.155.06 1.303.076 1.772.078 4.752v1.217c-.002 2.98-.019 3.449-.078 4.751-.063 1.384-.283 2.33-.605 3.156a6.372 6.372 0 0 1-1.5 2.303 6.373 6.373 0 0 1-2.302 1.5c-.827.32-1.772.54-3.155.604-1.261.057-1.742.075-4.471.078h-1.779c-2.73-.003-3.21-.02-4.47-.078-1.385-.063-2.33-.283-3.156-.604a6.374 6.374 0 0 1-2.303-1.5 6.373 6.373 0 0 1-1.5-2.303c-.321-.827-.54-1.772-.604-3.155-.056-1.22-.074-1.709-.077-4.206v-2.31C.605 9.348.623 8.86.679 7.64c.063-1.383.283-2.329.604-3.155a6.373 6.373 0 0 1 1.5-2.303 6.372 6.372 0 0 1 2.303-1.5C5.912.361 6.857.142 8.24.078 9.46.022 9.95.004 12.446 0h2.31Zm5.946 4.5a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Zm-7.1 1.5a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm0 11.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z"-->
+                  <!--                            fill="#fff"></path>-->
+                  <!--                    </svg>-->
+                  <!--                  </a><a-->
+                  <!--                    class="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"-->
+                  <!--                    target="_blank" :href="youtubeUrl">-->
+                  <!--                    <svg class="h-4" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                  <!--                      <path-->
+                  <!--                        d="M32.82 3.755c-.38-1.468-1.495-2.626-2.908-3.021C27.329 0 17 0 17 0S6.67 0 4.088.706c-1.386.395-2.528 1.581-2.908 3.05C.5 6.437.5 12 .5 12s0 5.59.68 8.245c.38 1.468 1.494 2.625 2.908 3.02C6.698 24 17 24 17 24s10.33 0 12.912-.706c1.413-.395 2.528-1.553 2.909-3.021.679-2.683.679-8.245.679-8.245s.027-5.59-.68-8.273ZM13.71 17.14V6.86L22.3 12l-8.59 5.139Z"-->
+                  <!--                        fill="#fff"></path>-->
+                  <!--                    </svg>-->
+                  <!--                  </a>-->
+                </div>
               </div>
               <div class="relative group min-w-[175px] lg:min-w-max sm:hidden">
                 <div class="flex justify-between items-center cursor-pointer p-4  group-hover:text-white">
-                  <div class="flex items-center space-x-2"><img src="../assets/en.svg"
-                                                                class="w-5 h-5 lg:mr-2.5" alt=""><span
-                      class="lg:hidden">English</span></div>
-                  <svg class="fill-current w-2.5 transition all easy-out group-hover:rotate-180"
-                       viewBox="0 0 8 4" fill="#8B8C8C" xmlns="http://www.w3.org/2000/svg">
+                  <div class="flex items-center space-x-2">
+                    <img v-show="curLng==='en'" src="../assets/en.svg" class="w-5 h-5 lg:mr-2.5" alt="">
+                    <img v-show="curLng==='de'" src="../assets/de.svg" class="w-5 h-5" alt="">
+                    <span style="color: #999">{{ curLngName }}</span></div>
+                  <svg class="fill-current w-2.5 transition all easy-out group-hover:rotate-180" viewBox="0 0 8 4"
+                       fill="#8B8C8C" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 0H0l4 4 4-4Z"></path>
                   </svg>
                 </div>
-                <ul class="w-full absolute bg-lightGray rounded-[15px] hidden group-hover:flex flex-col overflow-hidden drop-shadow-lg bottom-full !right-0">
-                  <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                <ul
+                    class="w-full absolute bg-lightGray rounded-[15px] hidden group-hover:flex flex-col overflow-hidden drop-shadow-lg bottom-full !right-0">
+                  <li
+                      @click="chooseLng('en')"
+                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
                     <img src="../assets/en.svg" class="w-5 h-5" alt=""><span class="lg:hidden">English</span>
                   </li>
-                  <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                  <li
+                      @click="chooseLng('de')"
+                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
                     <img src="../assets/de.svg" class="w-5 h-5" alt=""><span class="lg:hidden">German</span>
                   </li>
-                  <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                    <img src="../assets/es.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Spanish</span>
-                  </li>
-                  <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                    <img src="../assets/ru.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Русский</span>
-                  </li>
-                  <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                    <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span class="lg:hidden">French</span>
-                  </li>
-                  <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                    <img src="../assets/es.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Spanish</span>
-                  </li>
-                  <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                    <img src="../assets/it.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Italian</span>
-                  </li>
-                  <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                    <img src="../assets/az.svg" class="w-5 h-5" alt=""><span class="lg:hidden">AZƏRBAYCAN</span>
-                  </li>
-                  <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                    <img src="../assets/ar.svg" class="w-5 h-5" alt=""><span class="lg:hidden">العربية</span>
-                  </li>
-                  <li class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                    <img src="../assets/he.svg" class="w-5 h-5" alt=""><span class="lg:hidden">עִבְרִית</span>
-                  </li>
+<!--                  <li-->
+<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                    <img src="../assets/es.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Spanish</span>-->
+<!--                  </li>-->
+<!--                  <li-->
+<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                    <img src="../assets/ru.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Русский</span>-->
+<!--                  </li>-->
+<!--                  <li-->
+<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                    <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span class="lg:hidden">French</span>-->
+<!--                  </li>-->
+<!--                  <li-->
+<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                    <img src="../assets/es.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Spanish</span>-->
+<!--                  </li>-->
+<!--                  <li-->
+<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                    <img src="../assets/it.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Italian</span>-->
+<!--                  </li>-->
+<!--                  <li-->
+<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                    <img src="../assets/az.svg" class="w-5 h-5" alt=""><span class="lg:hidden">AZƏRBAYCAN</span>-->
+<!--                  </li>-->
+<!--                  <li-->
+<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                    <img src="../assets/ar.svg" class="w-5 h-5" alt=""><span class="lg:hidden">العربية</span>-->
+<!--                  </li>-->
+<!--                  <li-->
+<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+<!--                    <img src="../assets/he.svg" class="w-5 h-5" alt=""><span class="lg:hidden">עִבְרִית</span>-->
+<!--                  </li>-->
                 </ul>
               </div>
             </div>
@@ -1512,7 +1585,7 @@
           <button
               class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple-750 hover:bg-lightPurple active:bg-lightPurple !rounded-5 !py-2.5 !px-3.5 relative !z-40 drop-shadow-md min-h-[45px] overflow-hidden border border-white-50">
             <div class="absolute top-0 left-0 w-full h-full backdrop-blur bg-white-10"></div>
-            <a class="flex items-center space-x-2 z-10" target="_blank" href="https://t.me/smartpeoplechat/">
+            <a class="flex items-center space-x-2 z-10" target="_blank" :href="telegramChat">
               <svg class="w-6 h-6" viewBox="0 0 36 36" fill="#fff" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#a)">
                   <path
@@ -1530,7 +1603,7 @@
           <button
               class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple-750 hover:bg-lightPurple active:bg-lightPurple !rounded-5 !py-2.5 !px-3.5 relative !z-40 drop-shadow-md min-h-[45px] overflow-hidden border border-white-50">
             <div class="absolute top-0 left-0 w-full h-full backdrop-blur bg-white-10"></div>
-            <a class="flex items-center space-x-2.5 z-10" target="_blank" href="https://t.me/forsageio_official/">
+            <a class="flex items-center space-x-2.5 z-10" target="_blank" :href="telegramChannel">
               <svg class="w-5 h-5" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                       d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
@@ -1545,29 +1618,101 @@
 
 <script>
 /*eslint-disable*/
+const TronWeb = require('tronweb')
+import abiUtil from "../abi/index"
 export default {
   name: "Home",
-  data(){
+  data() {
     return {
-      navIndex1:0,
-      navIndex2:0,
-      hide1:true,
-      hide2:true,
-      hide3:true,
-      hide4:true,
-      hide5:true,
-      hide6:true,
-      hide7:true,
-      hide8:true,
-      hide9:true,
-      hide0:true,
-
-
+      tronWeb: {},
+      documentUrl: "https://#.com",
+      websideUrl: "#",
+      Disclaimer: "#",
+      telegramChat: "https://t.me/+1xx-sOgmbns3YzFl",
+      telegramChannel: "https://t.me/YunusLoopDeFiChannel",
+      insUrl: "#",
+      twitterUrl: "#",
+      youtubeUrl: "#",
+      contractAddress: "TUtsRXcAAgC9FfFyhHzNZkqCByLXytmVii",
+      tronAddress1: "TN4takXVVCDsTBS2uwkc6VhDT4ceynyYNV",
+      navIndex1: 2,
+      navIndex2: 0,
+      hide1: true,
+      hide2: true,
+      hide3: true,
+      hide4: true,
+      hide5: true,
+      hide6: true,
+      hide7: true,
+      hide8: true,
+      hide9: true,
+      hide0: true,
+      nodePath:"https://api.trongrid.io",
+      contractTrxBalance:0,
+      contractUSDTBalance:0,
+      curLng: "en",
+      curLngName:"English"
     }
   },
   components: {},
-  methods: {},
+  created() {
+    let type = localStorage.getItem("language");
+    this.handelChooseLng(this.type)
+  },
+  methods: {
+    handelChooseLng(type){
+      switch (type){
+        case "en" :this.curLngName = "English";this.curLng = "en";break
+        case "de" :this.curLngName = "German";this.curLng = "de";break
+      }
+    },
+    chooseLng(type) {
+      localStorage.setItem("language", type);
+      this.$i18n.locale = type;
+      this.handelChooseLng(type)
+    },
+    getConnect() {
+      const HttpProvider = TronWeb.providers.HttpProvider;
+      const fullNode = new HttpProvider(this.nodePath);
+      const solidityNode = new HttpProvider(this.nodePath);
+      const eventServer = new HttpProvider(this.nodePath);
+
+      const tronWeb = new TronWeb(
+          fullNode,
+          solidityNode,
+          eventServer,
+      );
+      this.tronWeb = tronWeb
+      console.log(tronWeb)
+      console.log(window.tronWeb)
+
+    },
+    async getData(){
+
+      try {
+        let balance = await  window.tronWeb.trx.getBalance(this.contractAddress);
+        this.contractTrxBalance = parseInt(parseInt(balance) / 10**6).toString()
+        this.contractTrxBalance = this.contractTrxBalance.split('').reverse().join('');
+        this.contractTrxBalance = this.contractTrxBalance.replace(/(.{3})/g, "$1 ")
+        this.contractTrxBalance = this.contractTrxBalance.split('').reverse().join('');
+        this.getUSDTBalance()
+      }catch (e){
+        console.log(e)
+      }
+    },
+    async getUSDTBalance(){
+
+      let contract =await abiUtil.getContractByName("USDT",window.tronWeb)
+      let res = await contract.balanceOf(this.contractAddress).call({})
+      this.contractUSDTBalance =  parseInt(window.tronWeb.toDecimal(res._hex)/10**6).toString()
+
+      this.contractUSDTBalance = this.contractUSDTBalance.split('').reverse().join('');
+      this.contractUSDTBalance = this.contractUSDTBalance.replace(/(.{3})/g, "$1 ")
+      this.contractUSDTBalance = this.contractUSDTBalance.split('').reverse().join('');
+    }
+  },
   mounted() {
+    this.getData()
     new Swiper('.swiper-container', {
       autoplay: 4000,
       paginationClickable: true,
@@ -1591,15 +1736,16 @@ export default {
 @import "../style/home1.css";
 
 .home {
-  .swiper{
+  .swiper {
     width: 80%;
   }
+
   .swiper-slide {
-    transform: scale(0.8)!important;
+    transform: scale(0.8) !important;
   }
 
   .swiper-slide-active {
-    transform: scale(1)!important;
+    transform: scale(1) !important;
   }
 }
 </style>
