@@ -450,7 +450,7 @@
             <div class="flex flex-col w-full items-center mb-[60px] sm:items-start sm:mt-2.5 sm:mb-10">
 
               <div class="flex space-x-2 sm:flex-col sm:space-x-0 sm:space-y-2"><span>{{ $t("contractAddress") }}
-                <!-- --> <span class="text-white font-semibold">:</span></span><span
+                <!-- --> <span class="text-white font-semibold"></span></span><span
                   class="text-white cursor-pointer hover:text-white-800 sm:hidden">{{ contractAddress }}</span>
                 <div class="justify-start items-center hidden sm:flex"><span class=" text-white mr-2.5">{{
                     contractAddress.substr(0, 14) + "..." + contractAddress.substr(contractAddress.length - 4, contractAddress.length)
@@ -1672,7 +1672,7 @@ export default {
       twitterUrl: "#",
       youtubeUrl: "#",
       contractAddress: "TUtsRXcAAgC9FfFyhHzNZkqCByLXytmVii",
-      tronAddress1: "TN4takXVVCDsTBS2uwkc6VhDT4ceynyYNV",
+      tronAddress1: "TUtsRXcAAgC9FfFyhHzNZkqCByLXytmVii",
       navIndex1: 2,
       navIndex2: 0,
       hide1: true,
