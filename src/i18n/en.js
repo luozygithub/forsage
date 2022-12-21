@@ -17,7 +17,7 @@ export default{
     page2info2bottom:"Find a mentor",
     page3title:"Partner results",
     page3content1:"All data is stored in the blockchain in the public domain and can be verified!",
-    contractAddress:"Circulation Contract ",
+    CirculationAddress:"Circulation Address ",
     "Accounts count":"Accounts count",
     "Total result":"Total result",
 
