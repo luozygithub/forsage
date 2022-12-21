@@ -26,15 +26,15 @@
                 <img src="../assets/logo.png" style="width: 54px;height: 38px;" alt="">
               </a>
 
-              <div class="flex  flex-start space-x-10 lg:space-x-5 font-medium sm:hidden">
-                <!--                <a-->
-                <!--                    class="hover:text-white" target="_blank"-->
-                <!--                    href="#">Community</a>-->
-                <a class="hover:text-white"
-                   style="color:#999;"
-                   target="_blank"
-                   :href="documentUrl"> {{ $t("documentation") }}</a>
-              </div>
+<!--              <div class="flex  flex-start space-x-10 lg:space-x-5 font-medium sm:hidden">-->
+<!--                &lt;!&ndash;                <a&ndash;&gt;-->
+<!--                &lt;!&ndash;                    class="hover:text-white" target="_blank"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    href="#">Community</a>&ndash;&gt;-->
+<!--                <a class="hover:text-white"-->
+<!--                   style="color:#999;"-->
+<!--                   target="_blank"-->
+<!--                   :href="documentUrl"> {{ $t("documentation") }}</a>-->
+<!--              </div>-->
             </div>
             <div class="relative group min-w-[175px] lg:min-w-max sm:hidden">
               <div class="flex justify-between items-center cursor-pointer p-4  group-hover:text-white">
@@ -350,7 +350,7 @@
                         </a></li>
                         <li class="slide"><a
                             class="w-full flex justify-center items-center px-2.5 sm:px-0"
-                            target="_blank" :href="documentUrl">
+                            target="_blank" :href="telegramChannel">
                           <div
                               class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
                             <div class="flex flex-col items-start text-left flex-1 space-y-2.5">
