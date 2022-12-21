@@ -868,7 +868,9 @@
                                     class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
                                     $t('Autonomy')
                                   }}</span><span
-                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">The Forsage ecosystem is built around the technology of smart contracts and NFTs, which are completely autonomous and exclude the influence of the human factor.</span>
+                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
+
+                                .</span>
                               </div>
                             </div>
                           </li>
@@ -1031,7 +1033,9 @@
                                     class="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">{{
                                     $t('Autonomy')
                                   }}</span><span
-                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">The Forsage ecosystem is built around the technology of smart contracts and NFTs, which are completely autonomous and exclude the influence of the human factor.</span>
+                                  class="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
+
+                              </span>
                               </div>
                             </div>
                           </li>
@@ -1436,8 +1440,9 @@
           <div style="justify-content: center!important;"
                class="flex w-full max-w-desktop-full mb-[40px] space-x-[50px] px-5 lg:flex-col lg:px-0 lg:mb-0 lg:space-x-0">
             <div
+                style="align-items: center"
                 class="flex space-x-[50px] lg:flex-col lg:space-x-0 lg:bg-lightGray lg:px-5 lg:pt-[30px] lg:space-y-[30px] lg:order-2">
-              <img src="../assets/logo_grey.webp" class="h-[36px] mb-5 lg:mt-2.5"><span class=""/>
+              <img style="width: 194px" src="../assets/logo_grey.webp" class="h-[36px]"><span class=""/>
               <!--              <div class="flex flex-col items-start max-w-[250px] w-full flex-shrink-0 lg:max-w-full"><img-->
               <!--                  src="../assets/logo_grey.webp" class="h-[36px] mb-5 lg:mt-2.5"><span class="">{{-->
               <!--                  $t('bottomInfo')-->

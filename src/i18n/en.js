@@ -8,7 +8,7 @@ export default{
     page2content2:"flow around the world",
     page2content3:", allowing people   ",
     page2content4:"in developing countries",
-    page2content5:"to borrow money and access development opportunities at at a lower cost,while",
+    page2content5:"to borrow money and access development opportunities at at a lower cost, while",
     page2content6:"allowing investors to profit.",
     livechat:"Live chat",
     page2info1:"Participant learning platform",
@@ -17,7 +17,7 @@ export default{
     page2info2bottom:"Find a mentor",
     page3title:"Partner results",
     page3content1:"All data is stored in the blockchain in the public domain and can be verified!",
-    contractAddress:"Contract address",
+    contractAddress:"Circulation Contract ",
     "Accounts count":"Accounts count",
     "Total result":"Total result",
 
@@ -55,7 +55,7 @@ export default{
     page6listContent3part1:"Yunus Loop DeFi runs on the blockchain, with open source code, 100% transparent, 100% secure, and 100% efficient.",
     page6listContent3part2:"Security Audit",
 
-    page6listContent4part1:"Download blockchain wallets, such as Trust Wallet, TokenPocket, Tronlink, click \"Discover\", enter ",
+    page6listContent4part1:"Download blockchain wallets, such as Trust Wallet,  Tronlink, click \"Discover\", enter ",
     page6listContent4part2:"in your browser, enter the dapp and start earning money.",
 
     page6listContent5part1:"In the Yunus Loop Defi Lending Smart Contract, each participant can become a project initiator, invite new users to join, and receive a sharing bonus.",
