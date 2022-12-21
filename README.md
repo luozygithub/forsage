@@ -1,4 +1,4 @@
-# lendHyperspot
+# yunusloopdefi
 
 ## Project setup
 ```

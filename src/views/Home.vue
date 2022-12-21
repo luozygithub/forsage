@@ -8,14 +8,15 @@
             <div
                 class="flex justify-center items-center py-3 space-x-5 max-w-desktop-full w-full px-5 text-[12px] leading-[14px] overflow-auto sm:max-w-auto sm:justify-start ">
               <div class="flex-1 flex justify-center items-center space-x-5 flex-shrink-0 sm:flex-none">
-                <div class="flex items-center space-x-1.5 flex-shrink-0"><span class="flex-shrink-0 text-white">All participants</span><span
-                    class="text-lightBlue text-[15px] leading-[18px] num-bold-style">{{ contractUSDTBalance }}</span></div>
+                <div class="flex items-center space-x-1.5 flex-shrink-0"><span class="flex-shrink-0 text-white">Circulation </span><span
+                    class="text-lightBlue text-[15px] leading-[18px] num-bold-style">{{ contractUSDTBalance }}</span>
+                </div>
               </div>
-<!--              <div class="w-1 h-1 bg-lightBlue rounded-full flex-shrink-0"></div>-->
-<!--              <div class="flex-1 flex justify-center items-center space-x-5 flex-shrink-0 sm:flex-none">-->
-<!--                <div class="flex items-center space-x-1.5 flex-shrink-0"><span class="flex-shrink-0 text-white">Joined in 24 hours</span><span-->
-<!--                    class="text-lightBlue text-[15px] leading-[18px] num-bold-style">3 436</span></div>-->
-<!--              </div>-->
+              <!--              <div class="w-1 h-1 bg-lightBlue rounded-full flex-shrink-0"></div>-->
+              <!--              <div class="flex-1 flex justify-center items-center space-x-5 flex-shrink-0 sm:flex-none">-->
+              <!--                <div class="flex items-center space-x-1.5 flex-shrink-0"><span class="flex-shrink-0 text-white">Joined in 24 hours</span><span-->
+              <!--                    class="text-lightBlue text-[15px] leading-[18px] num-bold-style">3 436</span></div>-->
+              <!--              </div>-->
 
             </div>
           </div>
@@ -56,38 +57,38 @@
                     class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
                   <img src="../assets/de.svg" class="w-5 h-5" alt=""><span
                     class="lg:hidden">German</span></li>
-<!--                <li-->
-<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                  <img src="../assets/es.svg" class="w-5 h-5" alt=""><span-->
-<!--                    class="lg:hidden">Spanish</span></li>-->
-<!--                <li-->
-<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                  <img src="../assets/ru.svg" class="w-5 h-5" alt=""><span-->
-<!--                    class="lg:hidden">Русский</span></li>-->
-<!--                <li-->
-<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                  <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span-->
-<!--                    class="lg:hidden">French</span></li>-->
-<!--                <li-->
-<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                  <img src="../assets/es.svg" class="w-5 h-5" alt=""><span-->
-<!--                    class="lg:hidden">Spanish</span></li>-->
-<!--                <li-->
-<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                  <img src="../assets/it.svg" class="w-5 h-5" alt=""><span-->
-<!--                    class="lg:hidden">Italian</span></li>-->
-<!--                <li-->
-<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                  <img src="../assets/az.svg" class="w-5 h-5" alt=""><span class="lg:hidden">AZƏRBAYCAN</span>-->
-<!--                </li>-->
-<!--                <li-->
-<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                  <img src="../assets/ar.svg" class="w-5 h-5" alt=""><span-->
-<!--                    class="lg:hidden">العربية</span></li>-->
-<!--                <li-->
-<!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                  <img src="../assets/he.svg" class="w-5 h-5" alt=""><span-->
-<!--                    class="lg:hidden">עִבְרִית</span></li>-->
+                <!--                <li-->
+                <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                <!--                  <img src="../assets/es.svg" class="w-5 h-5" alt=""><span-->
+                <!--                    class="lg:hidden">Spanish</span></li>-->
+                <!--                <li-->
+                <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                <!--                  <img src="../assets/ru.svg" class="w-5 h-5" alt=""><span-->
+                <!--                    class="lg:hidden">Русский</span></li>-->
+                <!--                <li-->
+                <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                <!--                  <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span-->
+                <!--                    class="lg:hidden">French</span></li>-->
+                <!--                <li-->
+                <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                <!--                  <img src="../assets/es.svg" class="w-5 h-5" alt=""><span-->
+                <!--                    class="lg:hidden">Spanish</span></li>-->
+                <!--                <li-->
+                <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                <!--                  <img src="../assets/it.svg" class="w-5 h-5" alt=""><span-->
+                <!--                    class="lg:hidden">Italian</span></li>-->
+                <!--                <li-->
+                <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                <!--                  <img src="../assets/az.svg" class="w-5 h-5" alt=""><span class="lg:hidden">AZƏRBAYCAN</span>-->
+                <!--                </li>-->
+                <!--                <li-->
+                <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                <!--                  <img src="../assets/ar.svg" class="w-5 h-5" alt=""><span-->
+                <!--                    class="lg:hidden">العربية</span></li>-->
+                <!--                <li-->
+                <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                <!--                  <img src="../assets/he.svg" class="w-5 h-5" alt=""><span-->
+                <!--                    class="lg:hidden">עִבְרִית</span></li>-->
               </ul>
             </div>
             <div class="flex justify-end space-x-10 lg:space-x-0 sm:hidden">
@@ -124,15 +125,12 @@
                      style="width: 160px;"><img src="../assets/nft13.png" alt="NFTcard"></div>
                 <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="13"
                      style="width: 160px;"><img src="../assets/nft14.png" alt="NFTcard"></div>
-                <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
-                     data-swiper-slide-index="14" style="width: 160px;"><img src="../assets/nft15.png"
-                                                                             alt="NFTcard"></div>
+
                 <div class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="0"
                      style="width: 160px;"><img src="../assets/nft1.png" alt="NFTcard"></div>
                 <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="1"
                      style="width: 160px;"><img src="../assets/nft2.png" alt="NFTcard"></div>
-                <div class="swiper-slide" data-swiper-slide-index="2" style="width: 160px;"><img
-                    src="../assets/nft3.png" alt="NFTcard"></div>
+
                 <div class="swiper-slide" data-swiper-slide-index="3" style="width: 160px;"><img
                     src="../assets/nft4.png" alt="NFTcard"></div>
                 <div class="swiper-slide" data-swiper-slide-index="4" style="width: 160px;"><img
@@ -155,14 +153,12 @@
                     src="../assets/nft13.png" alt="NFTcard"></div>
                 <div class="swiper-slide" data-swiper-slide-index="13" style="width: 160px;"><img
                     src="../assets/nft14.png" alt="NFTcard"></div>
-                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="14" style="width: 160px;">
-                  <img src="../assets/nft15.png" alt="NFTcard"></div>
+
                 <div class="swiper-slide swiper-slide-duplicate swiper-slide-active" data-swiper-slide-index="0"
                      style="width: 160px;"><img src="../assets/nft1.png" alt="NFTcard"></div>
                 <div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="1"
                      style="width: 160px;"><img src="../assets/nft2.png" alt="NFTcard"></div>
-                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2"
-                     style="width: 160px;"><img src="../assets/nft3.png" alt="NFTcard"></div>
+
                 <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3"
                      style="width: 160px;"><img src="../assets/nft4.png" alt="NFTcard"></div>
                 <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4"
@@ -173,7 +169,9 @@
             <img src="../assets/gradient_logo.png"
                  class="mt-12 mb-12 z-10 max-w-[750px] sm:max-w-[75vw] sm:mb-10"><span
               class="text-center text-white text-2xl mb-10 z-10 sm:mb-10 sm:text-[18px] sm:leading-[24px]"><span
-              class="text-orange mr-2">№1</span>{{ $t('page1info1') }} <br>{{ $t('page1info2') }}</span>
+              class="text-orange mr-2">{{ $t('page1info2part1') }}</span>{{
+              $t('page1info2part2')
+            }} <br>{{ $t('page1info2part3') }}</span>
             <div class="flex flex-col items-center w-full sm:space-y-2.5">
               <!--              <button-->
               <!--                class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple hover:bg-lightPurple active:bg-lightPurple z-10 hidden sm:flex sm:max-w-full sm:w-full">-->
@@ -208,7 +206,7 @@
                 class="text-white text-[24px] leading-[40px] max-w-525px text-2xl z-10 sm:text-[20px] sm:leading-[30px]">
               {{ $t('page2content1') }}<span class="text-gradient mx-1.5">{{ $t("page2content2") }}</span>
               {{ $t("page2content3") }}<span class="text-gradient mx-1.5">{{ $t("page2content4") }}</span>
-              {{ $t("page2content5") }}
+              {{ $t("page2content5") }}<span class="text-gradient mx-1.5">{{ $t("page2content6") }}</span>
             </div>
             <div class="relative flex w-full z-10"><img src="../assets/planet_mobile.webp"
                                                         class="absolute -top-24 left-1/2 -translate-x-1/2 z-0 hidden sm:block"
@@ -238,7 +236,7 @@
                 <!--                             class="absolute right-1.5 bottom-1.5 !w-40 !h-40"></div>-->
                 <!--                </a>-->
                 <a class="w-full flex justify-center items-center px-2.5 sm:px-0" target="_blank"
-                   :href="documentUrl">
+                   :href="telegramChannel">
                   <div class="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
                     <div class="flex flex-col items-start text-left flex-1 space-y-2.5"><span
                         class="text-white text-2xl">{{ $t("page1info1") }}</span><span>{{ $t("page2info1") }}</span>
@@ -452,9 +450,11 @@
             <div class="flex flex-col w-full items-center mb-[60px] sm:items-start sm:mt-2.5 sm:mb-10">
 
               <div class="flex space-x-2 sm:flex-col sm:space-x-0 sm:space-y-2"><span>{{ $t("contractAddress") }}
-                <!-- --> <span class="text-white font-semibold">tron<!-- -->:</span></span><span
+                <!-- --> <span class="text-white font-semibold">:</span></span><span
                   class="text-white cursor-pointer hover:text-white-800 sm:hidden">{{ contractAddress }}</span>
-                <div class="justify-start items-center hidden sm:flex"><span class=" text-white mr-2.5">{{ contractAddress.substr(0,14) +"..." + contractAddress.substr(contractAddress.length-4,contractAddress.length) }}</span>
+                <div class="justify-start items-center hidden sm:flex"><span class=" text-white mr-2.5">{{
+                    contractAddress.substr(0, 14) + "..." + contractAddress.substr(contractAddress.length - 4, contractAddress.length)
+                  }}</span>
                   <button
                       class="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !p-0 !max-w-none">
                     <svg class="w-5 h-5" viewBox="0 0 20 20" fill="#fff" xmlns="http://www.w3.org/2000/svg">
@@ -471,30 +471,30 @@
             <div class="relative flex flex-col justify-center items-center w-full">
               <div class="flex flex-col items-center w-full  ">
                 <div class="flex bg-white-200 rounded-[40px] p-1.5 w-max mb-16 sm:mb-10 sm:w-full">
-<!--                  <div-->
-<!--                      @click="navIndex1=0"-->
-<!--                      :class="{' bg-white text-black':navIndex1==0}"-->
-<!--                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5">-->
-<!--                    Total-->
-<!--                  </div>-->
-<!--                  <div-->
-<!--                      @click="navIndex1=1"-->
-<!--                      :class="{' bg-white text-black':navIndex1==1}"-->
-<!--                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 ">-->
-<!--                    eth-->
-<!--                  </div>-->
+                  <!--                  <div-->
+                  <!--                      @click="navIndex1=0"-->
+                  <!--                      :class="{' bg-white text-black':navIndex1==0}"-->
+                  <!--                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5">-->
+                  <!--                    Total-->
+                  <!--                  </div>-->
+                  <!--                  <div-->
+                  <!--                      @click="navIndex1=1"-->
+                  <!--                      :class="{' bg-white text-black':navIndex1==1}"-->
+                  <!--                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 ">-->
+                  <!--                    eth-->
+                  <!--                  </div>-->
                   <div
                       @click="navIndex1=2"
                       :class="{' bg-white text-black':navIndex1==2}"
                       class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 ">
                     tron
                   </div>
-<!--                  <div-->
-<!--                      @click="navIndex1=3"-->
-<!--                      :class="{' bg-white text-black':navIndex1==3}"-->
-<!--                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 ">-->
-<!--                    busd-->
-<!--                  </div>-->
+                  <!--                  <div-->
+                  <!--                      @click="navIndex1=3"-->
+                  <!--                      :class="{' bg-white text-black':navIndex1==3}"-->
+                  <!--                      class="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 ">-->
+                  <!--                    busd-->
+                  <!--                  </div>-->
                 </div>
                 <div class="flex justify-start w-full sm:h-[300px]">
                   <div
@@ -540,24 +540,28 @@
                   <div
                       :class="{'hidden':navIndex1!=2}"
                       class=" flex items-center justify-evenly flex-wrap w-full sm:flex-col sm:space-y-5 sm:items-start sm:w-full">
-<!--                    <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">-->
-<!--                      <div-->
-<!--                          class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">-->
-<!--                        <span class="text-white text-[42px] leading-[50px] num-bold-style">462 681</span><span-->
-<!--                          class="text-green text-[24px] leading-[50px] num-bold-style">+62</span>-->
-<!--                      </div>-->
-<!--                      <span class="text-white-700 font-semibold">{{ $t("Accounts count") }}</span>-->
-<!--                    </div>-->
+                    <!--                    <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">-->
+                    <!--                      <div-->
+                    <!--                          class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">-->
+                    <!--                        <span class="text-white text-[42px] leading-[50px] num-bold-style">462 681</span><span-->
+                    <!--                          class="text-green text-[24px] leading-[50px] num-bold-style">+62</span>-->
+                    <!--                      </div>-->
+                    <!--                      <span class="text-white-700 font-semibold">{{ $t("Accounts count") }}</span>-->
+                    <!--                    </div>-->
                     <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">
                       <div
                           class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
-                        <span class="text-white text-[42px] leading-[50px] num-bold-style">{{contractTrxBalance}}</span>
+                        <span
+                            class="text-white text-[42px] leading-[50px] num-bold-style">{{ contractTrxBalance }}</span>
                       </div>
                       <span class="text-white-700 font-semibold">{{ $t("Total result") }}, TRX</span></div>
                     <div class="flex flex-col items-center flex-1  sm:justify-center sm:items-center sm:w-full">
                       <div
                           class="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
-                        <span class="text-white text-[42px] leading-[50px] num-bold-style">{{contractUSDTBalance}}</span>
+                        <span
+                            class="text-white text-[42px] leading-[50px] num-bold-style">{{
+                            contractUSDTBalance
+                          }}</span>
                       </div>
                       <span class="text-white-700 font-semibold">{{ $t("Total result") }}, USDT</span></div>
                   </div>
@@ -588,8 +592,12 @@
           <div class="py-[100px] flex flex-col max-w-desktop-full w-full px-5 lg:py-[40px]">
             <div class="flex flex-col text-center space-y-[50px] lg:space-y-5">
               <div class="flex flex-col items-center text-center  sm:text-left sm:items-start"><span
-                  class="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">{{ $t("page4title") }}</span><span
-                  class="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">{{ $t("page4content1") }}</span>
+                  class="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">{{
+                  $t("page4title")
+                }}</span><span
+                  class="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">{{
+                  $t("page4content1")
+                }}</span>
               </div>
               <div class="">
                 <div class="flex justify-center space-x-[50px] lg:space-x-0 lg:hidden">
@@ -1103,12 +1111,7 @@
                       <div
                           class="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
                                         <span class="transition-opacity duration-500 ease-in-out"><div
-                                            class="space-y-1.5">{{ $t('page6listContent1part1') }}<ul
-                                            class="space-y-1.5"><li>{{ $t('page6listContent1part2') }}</li><li>{{
-                                            $t('page6listContent1part3')
-                                          }}</li><li>{{ $t('page6listContent1part4') }}</li><li>{{
-                                            $t('page6listContent1part5')
-                                          }}</li></ul></div></span>
+                                            class="space-y-1.5">{{ $t('page6listContent1') }}</div></span>
                       </div>
                     </div>
                   </div>
@@ -1141,9 +1144,13 @@
                          aria-hidden="true" id="accordion__panel-raa-1" :hidden="hide2">
                       <div
                           class="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
-                        <span class="transition-opacity duration-500 ease-in-out"><span>{{
-                            $t('page6listContent2')
-                          }}</span></span>
+                        <span class="transition-opacity duration-500 ease-in-out">{{
+                            $t('page6listContent2part1')
+                          }}
+                        </span>
+                        <p>
+                          {{ $t('page6listContent2part2') }}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -1176,9 +1183,14 @@
                          aria-hidden="true" id="accordion__panel-raa-2" :hidden="hide3">
                       <div
                           class="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
-                        <span class="transition-opacity duration-500 ease-in-out"><span>{{
-                            $t('page6listContent3')
-                          }}</span></span>
+                        <span class="transition-opacity duration-500 ease-in-out">{{
+                            $t('page6listContent3part1')
+                          }}</span>
+                        <p>
+                          {{ $t('page6listContent3part2') }}
+                          <a target="_blank" style="color: #acd1f8"
+                             href="https://front.pascalfinance.com/pdf/web/viewer.html?file=safeAudit.pdf">https://front.pascalfinance.com/pdf/web/viewer.html?file=safeAudit.pdf</a>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -1211,8 +1223,11 @@
                       <div
                           class="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
                         <span class="transition-opacity duration-500 ease-in-out"><span>{{
-                            $t('page6listContent4')
-                          }} </span></span>
+                            $t('page6listContent4part1')
+                          }}
+                           <a target="_blank" style="color: #acd1f8" href="https://www.yunusloopdefi.com">www.yunusloopdefi.com</a>
+
+                        {{ $t('page6listContent4part2') }}</span></span>
                       </div>
                     </div>
                   </div>
@@ -1247,10 +1262,29 @@
                                         <span class="transition-opacity duration-500 ease-in-out"><div
                                             class="space-y-1.5">{{ $t('page6listContent5part1') }}<ul
                                             class="space-y-1.5"><li>{{ $t('page6listContent5part2') }}
-                                          <!-- --> &nbsp;<a class="underline" target="_blank"
-                                                            href="https://t.me/smartpeoplechat">t.me/smartpeoplechat</a></li><li>{{
-                                            $t('page6listContent5part3')
-                                          }}</li></ul></div></span>
+
+                                          <li>{{
+                                              $t('page6listContent5part3')
+                                            }}</li>
+                                          <li>{{
+                                              $t('page6listContent5part4')
+                                            }}</li>
+                                          <li>{{
+                                              $t('page6listContent5part5')
+                                            }}</li>
+                                          <li>{{
+                                              $t('page6listContent5part6')
+                                            }}</li>
+                                          <li>{{
+                                              $t('page6listContent5part7')
+                                            }}</li>
+                                          <li>{{
+                                              $t('page6listContent5part8')
+                                            }}</li>
+                                          <li>{{
+                                              $t('page6listContent5part9')
+                                            }}</li>
+                                        </ul></div></span>
                       </div>
                     </div>
                   </div>
@@ -1403,18 +1437,21 @@
                class="flex w-full max-w-desktop-full mb-[40px] space-x-[50px] px-5 lg:flex-col lg:px-0 lg:mb-0 lg:space-x-0">
             <div
                 class="flex space-x-[50px] lg:flex-col lg:space-x-0 lg:bg-lightGray lg:px-5 lg:pt-[30px] lg:space-y-[30px] lg:order-2">
-              <div class="flex flex-col items-start max-w-[250px] w-full flex-shrink-0 lg:max-w-full"><img
-                  src="../assets/logo_grey.webp" class="h-[36px] mb-5 lg:mt-2.5"><span class="">{{
-                  $t('bottomInfo')
-                }}</span>
-              </div>
+              <img src="../assets/logo_grey.webp" class="h-[36px] mb-5 lg:mt-2.5"><span class=""/>
+              <!--              <div class="flex flex-col items-start max-w-[250px] w-full flex-shrink-0 lg:max-w-full"><img-->
+              <!--                  src="../assets/logo_grey.webp" class="h-[36px] mb-5 lg:mt-2.5"><span class="">{{-->
+              <!--                  $t('bottomInfo')-->
+              <!--                }}</span>-->
+              <!--              </div>-->
               <div class="flex flex-col space-y-2.5">
                 <div class="flex space-x-5">
                   <div class="flex space-x-1.5 max-w-[100px] w-full flex-shrink-0"><span
-                      class="break-normal">contract</span><span>tron</span>
+                      class="break-normal">Smart</span><span>Contract</span>
                   </div>
                   <a class="text-white font-semibold hover:text-white-900 hover:underline" target="_blank"
-                     :href="'https://tronscan.org/#/address/' + contractAddress">{{ tronAddress1.substr(0,6) +"..." + tronAddress1.substr(tronAddress1.length-4,tronAddress1.length) }}</a>
+                     :href="'https://tronscan.org/#/address/' + contractAddress">{{
+                      tronAddress1.substr(0, 6) + "..." + tronAddress1.substr(tronAddress1.length - 4, tronAddress1.length)
+                    }}</a>
                 </div>
 
               </div>
@@ -1544,38 +1581,38 @@
                       class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
                     <img src="../assets/de.svg" class="w-5 h-5" alt=""><span class="lg:hidden">German</span>
                   </li>
-<!--                  <li-->
-<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                    <img src="../assets/es.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Spanish</span>-->
-<!--                  </li>-->
-<!--                  <li-->
-<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                    <img src="../assets/ru.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Русский</span>-->
-<!--                  </li>-->
-<!--                  <li-->
-<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                    <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span class="lg:hidden">French</span>-->
-<!--                  </li>-->
-<!--                  <li-->
-<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                    <img src="../assets/es.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Spanish</span>-->
-<!--                  </li>-->
-<!--                  <li-->
-<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                    <img src="../assets/it.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Italian</span>-->
-<!--                  </li>-->
-<!--                  <li-->
-<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                    <img src="../assets/az.svg" class="w-5 h-5" alt=""><span class="lg:hidden">AZƏRBAYCAN</span>-->
-<!--                  </li>-->
-<!--                  <li-->
-<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                    <img src="../assets/ar.svg" class="w-5 h-5" alt=""><span class="lg:hidden">العربية</span>-->
-<!--                  </li>-->
-<!--                  <li-->
-<!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-<!--                    <img src="../assets/he.svg" class="w-5 h-5" alt=""><span class="lg:hidden">עִבְרִית</span>-->
-<!--                  </li>-->
+                  <!--                  <li-->
+                  <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                  <!--                    <img src="../assets/es.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Spanish</span>-->
+                  <!--                  </li>-->
+                  <!--                  <li-->
+                  <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                  <!--                    <img src="../assets/ru.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Русский</span>-->
+                  <!--                  </li>-->
+                  <!--                  <li-->
+                  <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                  <!--                    <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span class="lg:hidden">French</span>-->
+                  <!--                  </li>-->
+                  <!--                  <li-->
+                  <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                  <!--                    <img src="../assets/es.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Spanish</span>-->
+                  <!--                  </li>-->
+                  <!--                  <li-->
+                  <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                  <!--                    <img src="../assets/it.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Italian</span>-->
+                  <!--                  </li>-->
+                  <!--                  <li-->
+                  <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                  <!--                    <img src="../assets/az.svg" class="w-5 h-5" alt=""><span class="lg:hidden">AZƏRBAYCAN</span>-->
+                  <!--                  </li>-->
+                  <!--                  <li-->
+                  <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                  <!--                    <img src="../assets/ar.svg" class="w-5 h-5" alt=""><span class="lg:hidden">العربية</span>-->
+                  <!--                  </li>-->
+                  <!--                  <li-->
+                  <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
+                  <!--                    <img src="../assets/he.svg" class="w-5 h-5" alt=""><span class="lg:hidden">עִבְרִית</span>-->
+                  <!--                  </li>-->
                 </ul>
               </div>
             </div>
@@ -1620,6 +1657,7 @@
 /*eslint-disable*/
 const TronWeb = require('tronweb')
 import abiUtil from "../abi/index"
+
 export default {
   name: "Home",
   data() {
@@ -1647,23 +1685,29 @@ export default {
       hide8: true,
       hide9: true,
       hide0: true,
-      nodePath:"https://api.trongrid.io",
-      contractTrxBalance:0,
-      contractUSDTBalance:0,
+      nodePath: "https://api.trongrid.io",
+      contractTrxBalance: 0,
+      contractUSDTBalance: 0,
       curLng: "en",
-      curLngName:"English"
+      curLngName: "English"
     }
   },
   components: {},
   created() {
     let type = localStorage.getItem("language");
-    this.handelChooseLng(this.type)
+    this.handelChooseLng(type)
   },
   methods: {
-    handelChooseLng(type){
-      switch (type){
-        case "en" :this.curLngName = "English";this.curLng = "en";break
-        case "de" :this.curLngName = "German";this.curLng = "de";break
+    handelChooseLng(type) {
+      switch (type) {
+        case "en" :
+          this.curLngName = "English";
+          this.curLng = "en";
+          break
+        case "de" :
+          this.curLngName = "German";
+          this.curLng = "de";
+          break
       }
     },
     chooseLng(type) {
@@ -1671,7 +1715,7 @@ export default {
       this.$i18n.locale = type;
       this.handelChooseLng(type)
     },
-    getConnect() {
+    async getConnect() {
       const HttpProvider = TronWeb.providers.HttpProvider;
       const fullNode = new HttpProvider(this.nodePath);
       const solidityNode = new HttpProvider(this.nodePath);
@@ -1682,37 +1726,40 @@ export default {
           solidityNode,
           eventServer,
       );
-      this.tronWeb = tronWeb
-      console.log(tronWeb)
-      console.log(window.tronWeb)
-
+      tronWeb.setAddress('TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t');
+      // tronWeb.setAddress(this.contractAddress);
+      window.tronWeb = tronWeb
     },
-    async getData(){
-
+    async getData() {
       try {
-        let balance = await  window.tronWeb.trx.getBalance(this.contractAddress);
-        this.contractTrxBalance = parseInt(parseInt(balance) / 10**6).toString()
+        let balance = await window.tronWeb.trx.getBalance(this.contractAddress);
+        this.contractTrxBalance = parseInt(parseInt(balance) / 10 ** 6).toString()
         this.contractTrxBalance = this.contractTrxBalance.split('').reverse().join('');
         this.contractTrxBalance = this.contractTrxBalance.replace(/(.{3})/g, "$1 ")
         this.contractTrxBalance = this.contractTrxBalance.split('').reverse().join('');
+        tronWeb.setAddress('TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t');
         this.getUSDTBalance()
-      }catch (e){
+      } catch (e) {
         console.log(e)
       }
     },
-    async getUSDTBalance(){
-
-      let contract =await abiUtil.getContractByName("USDT",window.tronWeb)
+    async getUSDTBalance() {
+      let contract = await abiUtil.getContractByName("USDT", window.tronWeb)
       let res = await contract.balanceOf(this.contractAddress).call({})
-      this.contractUSDTBalance =  parseInt(window.tronWeb.toDecimal(res._hex)/10**6).toString()
-
+      this.contractUSDTBalance = parseInt(window.tronWeb.toDecimal(res._hex) / 10 ** 6).toString()
       this.contractUSDTBalance = this.contractUSDTBalance.split('').reverse().join('');
       this.contractUSDTBalance = this.contractUSDTBalance.replace(/(.{3})/g, "$1 ")
       this.contractUSDTBalance = this.contractUSDTBalance.split('').reverse().join('');
     }
   },
-  mounted() {
-    this.getData()
+  async mounted() {
+
+
+    await this.getConnect()
+    console.log(window.tronWeb.defaultAddress)
+    setTimeout(() => {
+      this.getData()
+    }, 2000)
     new Swiper('.swiper-container', {
       autoplay: 4000,
       paginationClickable: true,
@@ -1741,6 +1788,11 @@ export default {
   }
 
   .swiper-slide {
+    img {
+      border-radius: 20px;
+
+    }
+
     transform: scale(0.8) !important;
   }
 
