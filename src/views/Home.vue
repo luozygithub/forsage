@@ -26,21 +26,23 @@
                 <img src="../assets/logo.png" style="width: 54px;height: 38px;" alt="">
               </a>
 
-<!--              <div class="flex  flex-start space-x-10 lg:space-x-5 font-medium sm:hidden">-->
-<!--                &lt;!&ndash;                <a&ndash;&gt;-->
-<!--                &lt;!&ndash;                    class="hover:text-white" target="_blank"&ndash;&gt;-->
-<!--                &lt;!&ndash;                    href="#">Community</a>&ndash;&gt;-->
-<!--                <a class="hover:text-white"-->
-<!--                   style="color:#999;"-->
-<!--                   target="_blank"-->
-<!--                   :href="documentUrl"> {{ $t("documentation") }}</a>-->
-<!--              </div>-->
+              <!--              <div class="flex  flex-start space-x-10 lg:space-x-5 font-medium sm:hidden">-->
+              <!--                &lt;!&ndash;                <a&ndash;&gt;-->
+              <!--                &lt;!&ndash;                    class="hover:text-white" target="_blank"&ndash;&gt;-->
+              <!--                &lt;!&ndash;                    href="#">Community</a>&ndash;&gt;-->
+              <!--                <a class="hover:text-white"-->
+              <!--                   style="color:#999;"-->
+              <!--                   target="_blank"-->
+              <!--                   :href="documentUrl"> {{ $t("documentation") }}</a>-->
+              <!--              </div>-->
             </div>
             <div class="relative group min-w-[175px] lg:min-w-max sm:hidden">
               <div class="flex justify-between items-center cursor-pointer p-4  group-hover:text-white">
                 <div class="flex items-center space-x-2">
                   <img v-show="curLng==='en'" src="../assets/en.svg" class="w-5 h-5 lg:mr-2.5" alt="">
                   <img v-show="curLng==='de'" src="../assets/de.svg" class="w-5 h-5" alt="">
+                  <img v-show="curLng==='fr'" src="../assets/fr.svg" class="w-5 h-5" alt="">
+                  <img v-show="curLng==='it'" src="../assets/it.svg" class="w-5 h-5" alt="">
                   <span style="color: #999">{{ curLngName }}</span></div>
                 <svg class="fill-current w-2.5 transition all easy-out group-hover:rotate-180" viewBox="0 0 8 4"
                      fill="#8B8C8C" xmlns="http://www.w3.org/2000/svg">
@@ -57,6 +59,11 @@
                     class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
                   <img src="../assets/de.svg" class="w-5 h-5" alt=""><span
                     class="lg:hidden">German</span></li>
+                <li
+                    @click="chooseLng('fr')"
+                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                  <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span
+                    class="lg:hidden">French</span></li>
                 <!--                <li-->
                 <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
                 <!--                  <img src="../assets/es.svg" class="w-5 h-5" alt=""><span-->
@@ -65,18 +72,16 @@
                 <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
                 <!--                  <img src="../assets/ru.svg" class="w-5 h-5" alt=""><span-->
                 <!--                    class="lg:hidden">Русский</span></li>-->
-                <!--                <li-->
-                <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-                <!--                  <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span-->
-                <!--                    class="lg:hidden">French</span></li>-->
+
                 <!--                <li-->
                 <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
                 <!--                  <img src="../assets/es.svg" class="w-5 h-5" alt=""><span-->
                 <!--                    class="lg:hidden">Spanish</span></li>-->
-                <!--                <li-->
-                <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-                <!--                  <img src="../assets/it.svg" class="w-5 h-5" alt=""><span-->
-                <!--                    class="lg:hidden">Italian</span></li>-->
+                <li
+                    @click="chooseLng('it')"
+                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                  <img src="../assets/it.svg" class="w-5 h-5" alt=""><span
+                    class="lg:hidden">Italian</span></li>
                 <!--                <li-->
                 <!--                    class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
                 <!--                  <img src="../assets/az.svg" class="w-5 h-5" alt=""><span class="lg:hidden">AZƏRBAYCAN</span>-->
@@ -1568,6 +1573,8 @@
                   <div class="flex items-center space-x-2">
                     <img v-show="curLng==='en'" src="../assets/en.svg" class="w-5 h-5 lg:mr-2.5" alt="">
                     <img v-show="curLng==='de'" src="../assets/de.svg" class="w-5 h-5" alt="">
+                    <img v-show="curLng==='fr'" src="../assets/fr.svg" class="w-5 h-5" alt="">
+                    <img v-show="curLng==='it'" src="../assets/it.svg" class="w-5 h-5" alt="">
                     <span style="color: #999">{{ curLngName }}</span></div>
                   <svg class="fill-current w-2.5 transition all easy-out group-hover:rotate-180" viewBox="0 0 8 4"
                        fill="#8B8C8C" xmlns="http://www.w3.org/2000/svg">
@@ -1594,18 +1601,20 @@
                   <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
                   <!--                    <img src="../assets/ru.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Русский</span>-->
                   <!--                  </li>-->
-                  <!--                  <li-->
-                  <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-                  <!--                    <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span class="lg:hidden">French</span>-->
-                  <!--                  </li>-->
+                  <li
+                      @click="chooseLng('fr')"
+                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="../assets/fr.svg" class="w-5 h-5" alt=""><span class="lg:hidden">French</span>
+                  </li>
                   <!--                  <li-->
                   <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
                   <!--                    <img src="../assets/es.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Spanish</span>-->
                   <!--                  </li>-->
-                  <!--                  <li-->
-                  <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
-                  <!--                    <img src="../assets/it.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Italian</span>-->
-                  <!--                  </li>-->
+                  <li
+                      @click="chooseLng('it')"
+                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="../assets/it.svg" class="w-5 h-5" alt=""><span class="lg:hidden">Italian</span>
+                  </li>
                   <!--                  <li-->
                   <!--                      class="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">-->
                   <!--                    <img src="../assets/az.svg" class="w-5 h-5" alt=""><span class="lg:hidden">AZƏRBAYCAN</span>-->
@@ -1712,6 +1721,14 @@ export default {
         case "de" :
           this.curLngName = "German";
           this.curLng = "de";
+          break
+        case "fr" :
+          this.curLngName = "Franch";
+          this.curLng = "fr";
+          break
+        case "it" :
+          this.curLngName = "Italian";
+          this.curLng = "it";
           break
       }
     },

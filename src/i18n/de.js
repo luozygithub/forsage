@@ -1,12 +1,6 @@
 export default{
     documentation: 'Dokumentation',
-    page1info1: 'Learning',
-    page1info2: 'geld verdienen',
-    page2content1:"Eine dezentrale Netzwerkplattform basierend auf Smart Contracts, zusammen mit NFT-Technologie, die",
-    page2content2:"bringt Menschen zusammen",
-    page2content3:"aus aller Welt u",
-    page2content4:"röffnet unendliche Möglichkeiten",
-    page2content5:"neue wirtschaftliche finanzielle systeme",
+
     livechat:"Live-Chat",
     page2info1:"Teilnehmer-Lernplattform",
     page2info2:"Plattform, auf der Sie erfahrenen Teilnehmern eine Frage stellen können",
@@ -23,15 +17,11 @@ export default{
     "Full automation":"Vollständige Automatisierung",
     "Decentralization":"Dezentralisierung",
     "100% online":"100% online",
-    page4listContent1:"Das FORSAGE-Ökosystem basiert auf der Technologie von Smart Contracts und NFTs, die vollständig autonom sind und den Einfluss des menschlichen Faktors ausschließen.",
     page4listContent2:"Der Algorithmus wird auf der Blockchain gespeichert, sodass niemand, nicht einmal die Urheber der Idee, Ihre Transaktionen eingreifen, stornieren oder ändern kann.",
     page4listContent3:"Der Smart-Contract-Code wird gemeinfrei gespeichert, und jeder kann jederzeit den gesamten Transaktionsverlauf einsehen. Das sorgt für faire Konditionen und verlässliche Statistiken, auf die Sie sich verlassen können.",
-    page4listContent4:"Alle Transaktionen zwischen Community-Mitgliedern finden direkt von einem persönlichen Wallet zum anderen statt. Die Teilnehmer haben keine Konten innerhalb des Systems, von denen sie Geld abheben können, da FORSAGE Ihr Vermögen nicht speichert.",
-    page4listContent5:"Niemand, nicht einmal die Ersteller des Codes, kann Änderungen an der Arbeit von Forsage Smart Contracts vornehmen.",
     page4listContent6:"Es gibt keine versteckten Kosten oder Servicegebühren. Der Saldo des Smart Contracts ist immer Null.",
 
     page5title:"Bequemes Büro",
 
 
-    bottomInfo:"Die weltweit erste 100 % dezentralisierte Matrix-Plattform",
 }
