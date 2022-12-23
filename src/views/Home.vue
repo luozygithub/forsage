@@ -1674,7 +1674,9 @@
 /*eslint-disable*/
 const TronWeb = require('tronweb')
 import abiUtil from "../abi/index"
-
+var COUNT = 6;
+//定时器
+var TIMER;
 export default {
   name: "Home",
   data() {
@@ -1711,10 +1713,45 @@ export default {
   },
   components: {},
   created() {
-    //scheme
-    window.location = 'tronlink://';
+    //
+
+    console.log(this.IsPhone())
+    if (this.IsPhone()) {
+      window.location = 'tronlink://';
+      this.bindEvent()
+
+      TIMER = setTimeout(function(){
+        //超时后跳转下载页
+        window.location.href = 'https://www.tronlink.org/';
+      },COUNT*1000);
+    }
   },
   methods: {
+    bindEvent() {
+      var hidden, visibilityChange;
+      if (typeof document.hidden !== "undefined") {
+        hidden = "hidden";
+        visibilityChange = "visibilitychange";
+      } else if (typeof document.msHidden !== "undefined") {
+        hidden = "msHidden";
+        visibilityChange = "msvisibilitychange";
+      } else if (typeof document.webkitHidden !== "undefined") {
+        hidden = "webkitHidden";
+        visibilityChange = "webkitvisibilitychange";
+      }
+      $(document).bind(visibilityChange, function () {
+        if (document[hidden]) {
+          //监听浏览器挂起时（即调起APP）清除定时
+          clearTimeout(TIMER);
+        }
+      });
+    },
+    IsPhone() {
+      var info = navigator.userAgent;
+      var isPhone = /mobile/i.test(info);
+      return isPhone;
+    },
+
     handelChooseLng(type) {
       switch (type) {
         case "en" :
