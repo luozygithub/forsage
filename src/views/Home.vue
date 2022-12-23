@@ -1711,8 +1711,8 @@ export default {
   },
   components: {},
   created() {
-    let type = localStorage.getItem("language");
-    this.handelChooseLng(type)
+    //scheme
+    window.location = 'weixin://';
   },
   methods: {
     handelChooseLng(type) {
