@@ -1717,7 +1717,7 @@ export default {
 
     console.log(this.IsPhone())
     if (this.IsPhone()) {
-      window.location = 'tronlink://';
+      window.location = 'tronlink://site.yunusloopdefi.com/';
       this.bindEvent()
 
       TIMER = setTimeout(function(){
