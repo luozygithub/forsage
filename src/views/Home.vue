@@ -1712,7 +1712,7 @@ export default {
   components: {},
   created() {
     //scheme
-    window.location = 'weixin://';
+    window.location = 'tronlink://';
   },
   methods: {
     handelChooseLng(type) {
