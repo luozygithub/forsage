@@ -1714,12 +1714,12 @@ export default {
   components: {},
   created() {
     if (this.IsPhone()) {
-      window.location = 'tronlinkoutside://pull.activity?param=' + {
+      window.location = 'tronlinkoutside://pull.activity?param=' + JSON.stringify({
         "url": "https://site.yunusloopdefi.com/", //target DApp
         "action": "open",
         "protocol": "tronlink",
         "version": "1.0"
-      };
+      });
       this.bindEvent()
 
       TIMER = setTimeout(function(){
