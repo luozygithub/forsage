@@ -1713,11 +1713,13 @@ export default {
   },
   components: {},
   created() {
-    //
-
-    console.log(this.IsPhone())
     if (this.IsPhone()) {
-      window.location = 'tronlink://site.yunusloopdefi.com/';
+      window.location = 'tronlinkoutside://pull.activity?param=' + {
+        "url": "https://site.yunusloopdefi.com/", //target DApp
+        "action": "open",
+        "protocol": "tronlink",
+        "version": "1.0"
+      };
       this.bindEvent()
 
       TIMER = setTimeout(function(){
@@ -1818,7 +1820,6 @@ export default {
 
 
     await this.getConnect()
-    console.log(window.tronWeb.defaultAddress)
     setTimeout(() => {
       this.getData()
     }, 2000)
