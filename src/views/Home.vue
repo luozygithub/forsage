@@ -1847,20 +1847,25 @@ export default {
 
 .home {
   .swiper {
-    width: 80%;
+    width: 70%;
   }
 
   .swiper-slide {
     img {
       border-radius: 20px;
-
     }
-
-    transform: scale(0.8) !important;
+  }
+  .swiper-slide {
+    transform: scale(.65)!important;
   }
 
-  .swiper-slide-active {
-    transform: scale(1) !important;
+  .swiper-slide.swiper-slide-active {
+    transform: scale(1)!important;
   }
+
+  .swiper-slide.swiper-slide-next, .swiper-slide.swiper-slide-prev {
+    transform: scale(.8)!important;
+  }
+
 }
 </style>
