@@ -1,7 +1,7 @@
 <template>
   <div class="home">
 
-    <div id="__next">
+    <div id="__next" style="width: 100%;overflow: hidden">
       <div class="flex flex-col w-full">
         <div class="sticky top-0 flex flex-col items-center w-full z-50 bg-darkGray ">
           <div class="flex justify-center border-b border-white-200 w-full bg-black">
@@ -204,9 +204,13 @@
             </div>
           </div>
         </div>
-        <div class="pb-40 relative flex justify-center w-full px-5 sm:pb-8"><img src="../assets/planet.png"
-                                                                                 class="absolute right-0 -top-44 z-0 sm:hidden"
-                                                                                 alt="forsagePlanet">
+        <div  class="pb-40 relative flex justify-center w-full px-5 sm:pb-8">
+          <!--          <img src="../assets/planet.png"-->
+          <!--               class="absolute right-0 -top-44 z-0 sm:hidden"-->
+          <!--               alt="forsagePlanet">-->
+          <div class="earth absolute right-0 -top-24 z-0 sm:hidden">
+
+          </div>
           <div class="w-full flex flex-col max-w-desktop-full space-y-28">
             <div
                 class="text-white text-[24px] leading-[40px] max-w-525px text-2xl z-10 sm:text-[20px] sm:leading-[30px]">
@@ -1674,6 +1678,7 @@
 /*eslint-disable*/
 const TronWeb = require('tronweb')
 import abiUtil from "../abi/index"
+
 var COUNT = 6;
 //定时器
 var TIMER;
@@ -1722,10 +1727,10 @@ export default {
       });
       this.bindEvent()
 
-      TIMER = setTimeout(function(){
+      TIMER = setTimeout(function () {
         //超时后跳转下载页
         window.location.href = 'https://www.tronlink.org/';
-      },COUNT*1000);
+      }, COUNT * 1000);
     }
   },
   methods: {
@@ -1855,17 +1860,38 @@ export default {
       border-radius: 20px;
     }
   }
+
   .swiper-slide {
-    transform: scale(.65)!important;
+    transform: scale(.65) !important;
   }
 
   .swiper-slide.swiper-slide-active {
-    transform: scale(1)!important;
+    transform: scale(1) !important;
   }
 
   .swiper-slide.swiper-slide-next, .swiper-slide.swiper-slide-prev {
-    transform: scale(.8)!important;
+    transform: scale(.8) !important;
   }
 
+  @keyframes planetRotate {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
+
+  .earth {
+    width: 500px;
+    height: 500px;
+    animation: planetRotate 30s linear infinite;
+    background: url("../assets/earth.webp");
+    background-size: 200% 100%;
+    box-shadow: inset 1px 0px 0px -1px rgba(255, 255, 255, 0.1), inset -30px 0px 50px 0px black, -5px 0px 10px -4px #b3caff;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: rotate(45deg);
+  }
 }
 </style>
