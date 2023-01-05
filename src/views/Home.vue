@@ -208,7 +208,9 @@
           <!--          <img src="../assets/planet.png"-->
           <!--               class="absolute right-0 -top-44 z-0 sm:hidden"-->
           <!--               alt="forsagePlanet">-->
-          <div class="earth absolute right-0 -top-24 z-0 sm:hidden">
+          <div class="earth-box  earth absolute right-0 -top-24 z-0 sm:hidden">
+            <img src="../assets/earth.webp" class="earth"/>
+            <img src="../assets/earth.webp" class="earth2"/>
 
           </div>
           <div class="w-full flex flex-col max-w-desktop-full space-y-28">
@@ -222,7 +224,10 @@
 <!--              <img src="../assets/planet_mobile.webp"
                                                         class="absolute -top-24 left-1/2 -translate-x-1/2 z-0 hidden sm:block"
                                                         alt="forsagePlanet">-->
-              <div class="earth absolute -top-24 left-1/2 -translate-x-1/2 z-0 hidden sm:block"/>
+              <div class="earth-box  absolute -top-24 left-1/2 -translate-x-1/2 z-0 hidden sm:block">
+                <img src="../assets/earth.webp" class="earth"/>
+                <img src="../assets/earth.webp" class="earth2"/>
+              </div>
               <div class="flex w-full lg:hidden">
                 <!--                <a class="w-full flex justify-center items-center px-2.5 sm:px-0"-->
                 <!--                   target="_blank" href="#">-->
@@ -1875,37 +1880,76 @@ export default {
 
   @keyframes planetRotate {
     0% {
-      background-position: 0% center;
+      transform: translateX(-100%);
     }
     100% {
-      background-position: -200% center;
+      transform: translateX(0%);
+    }
+  }
+  @keyframes planetRotate2 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  .earth-box{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    transform: rotate(36deg);
+    top: 0;
+    right: 0 ;
+    overflow: hidden;
+    box-shadow: inset 1px 0px 0px -1px rgba(255, 255, 255, 0.1), inset -30px 0px 50px 0px black, -5px 0px 10px -4px #b3caff;
+    .earth2{
+      width: 200%!important;
+      max-width: 200%;
+      height: 100%;
+      animation: planetRotate2 30s linear infinite;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+    .earth {
+      width: 200%!important;
+      max-width: 200%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: planetRotate 30s linear infinite;
     }
   }
 
-  .earth {
-    width: 500px;
-    height: 500px;
-    animation: planetRotate 30s linear infinite;
-    background: url("../assets/earth.webp");
-    background-size: 200% 100%;
-    box-shadow: inset 1px 0px 0px -1px rgba(255, 255, 255, 0.1), inset -30px 0px 50px 0px black, -5px 0px 10px -4px #b3caff;
-    border-radius: 50%;
-    overflow: hidden;
-    transform: rotate(36deg);
-  }
   @media screen and (max-width: 800px) {
-    .earth {
+    .earth-box {
       width: 320px;
       height: 320px;
-      animation: planetRotate 30s linear infinite;
-      background: url("../assets/earth.webp");
-      background-size: 200% 100%;
       box-shadow: inset 1px 0px 0px -1px rgba(255, 255, 255, 0.1), inset -30px 0px 50px 0px black, -5px 0px 10px -4px #b3caff;
       border-radius: 50%;
       overflow: hidden;
       left: calc(50% - 160px);
       top: -6em;
-
+      .earth2{
+        width: 200%!important;
+        max-width: 200%;
+        height: 100%;
+        animation: planetRotate2 30s linear infinite;
+        top: 0;
+        left: 0;
+        position: absolute;
+      }
+      .earth {
+        width: 200%!important;
+        max-width: 200%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: planetRotate 30s linear infinite;
+      }
     }
   }
 }
