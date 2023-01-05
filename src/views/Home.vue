@@ -218,9 +218,11 @@
               {{ $t("page2content3") }}<span class="text-gradient mx-1.5">{{ $t("page2content4") }}</span>
               {{ $t("page2content5") }}<span class="text-gradient mx-1.5">{{ $t("page2content6") }}</span>
             </div>
-            <div class="relative flex w-full z-10"><img src="../assets/planet_mobile.webp"
+            <div class="relative flex w-full z-10">
+<!--              <img src="../assets/planet_mobile.webp"
                                                         class="absolute -top-24 left-1/2 -translate-x-1/2 z-0 hidden sm:block"
-                                                        alt="forsagePlanet">
+                                                        alt="forsagePlanet">-->
+              <div class="earth absolute -top-24 left-1/2 -translate-x-1/2 z-0 hidden sm:block"/>
               <div class="flex w-full lg:hidden">
                 <!--                <a class="w-full flex justify-center items-center px-2.5 sm:px-0"-->
                 <!--                   target="_blank" href="#">-->
@@ -1718,20 +1720,20 @@ export default {
   },
   components: {},
   created() {
-    if (this.IsPhone()) {
-      window.location = 'tronlinkoutside://pull.activity?param=' + JSON.stringify({
-        "url": "https://site.yunusloopdefi.com/", //target DApp
-        "action": "open",
-        "protocol": "tronlink",
-        "version": "1.0"
-      });
-      this.bindEvent()
-
-      TIMER = setTimeout(function () {
-        //超时后跳转下载页
-        window.location.href = 'https://www.tronlink.org/';
-      }, COUNT * 1000);
-    }
+    // if (this.IsPhone()) {
+    //   window.location = 'tronlinkoutside://pull.activity?param=' + JSON.stringify({
+    //     "url": "https://site.yunusloopdefi.com/", //target DApp
+    //     "action": "open",
+    //     "protocol": "tronlink",
+    //     "version": "1.0"
+    //   });
+    //   this.bindEvent()
+    //
+    //   TIMER = setTimeout(function () {
+    //     //超时后跳转下载页
+    //     window.location.href = 'https://www.tronlink.org/';
+    //   }, COUNT * 1000);
+    // }
   },
   methods: {
     bindEvent() {
@@ -1822,8 +1824,6 @@ export default {
     }
   },
   async mounted() {
-
-
     await this.getConnect()
     setTimeout(() => {
       this.getData()
@@ -1891,7 +1891,22 @@ export default {
     box-shadow: inset 1px 0px 0px -1px rgba(255, 255, 255, 0.1), inset -30px 0px 50px 0px black, -5px 0px 10px -4px #b3caff;
     border-radius: 50%;
     overflow: hidden;
-    transform: rotate(45deg);
+    transform: rotate(36deg);
+  }
+  @media screen and (max-width: 800px) {
+    .earth {
+      width: 320px;
+      height: 320px;
+      animation: planetRotate 30s linear infinite;
+      background: url("../assets/earth.webp");
+      background-size: 200% 100%;
+      box-shadow: inset 1px 0px 0px -1px rgba(255, 255, 255, 0.1), inset -30px 0px 50px 0px black, -5px 0px 10px -4px #b3caff;
+      border-radius: 50%;
+      overflow: hidden;
+      left: calc(50% - 160px);
+      top: -6em;
+
+    }
   }
 }
 </style>
